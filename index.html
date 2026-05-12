@@ -46,9 +46,9 @@
       background-size: cover;
       background-position: center;
     }
-    .slide-1 { background-image: url('https://images.unsplash.com/photo-1609520778753-ba8c8b40eeee?w=1600&q=85'); }
-    .slide-2 { background-image: url('https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=1600&q=85'); }
-    .slide-3 { background-image: url('https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=1600&q=85'); }
+    .slide-1 { background-image: url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=1600&q=90'); background-position: center center; }
+    .slide-2 { background-image: url('https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=1600&q=90'); background-position: center 60%; }
+    .slide-3 { background-image: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1600&q=90'); background-position: center 70%; }
     @keyframes slide-carousel {
       0%          { transform: translateX(0); }
       28%         { transform: translateX(0); }
@@ -61,16 +61,17 @@
     .hero-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to right,
-        rgba(10,29,46,0.82) 0%,
-        rgba(10,29,46,0.55) 40%,
-        rgba(10,29,46,0.55) 60%,
-        rgba(10,29,46,0.82) 100%);
+      background: linear-gradient(
+        to bottom,
+        rgba(10,29,46,0.45) 0%,
+        rgba(10,29,46,0.30) 40%,
+        rgba(10,29,46,0.55) 100%
+      );
       z-index: 1;
     }
     /* Carousel dots */
-    .carousel-dots { position: absolute; bottom: 160px; left: 50%; transform: translateX(-50%); z-index: 10; display: flex; gap: 8px; }
-    .c-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.4); cursor: pointer; transition: background .3s; }
+    .carousel-dots { position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); z-index: 10; display: flex; gap: 8px; }
+    .c-dot { width: 9px; height: 9px; border-radius: 50%; background: rgba(255,255,255,0.4); cursor: pointer; transition: background .3s; }
     .c-dot.active { background: #EBA815; }
 
     /* ── STATS BAR ── */
@@ -211,7 +212,7 @@
   </div>
 
   <!-- Hero content -->
-  <div class="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-4 pt-16 pb-6">
+  <div class="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-4 pt-16 pb-14">
     <p class="text-white/65 text-sm mb-3 tracking-wide">
       Premium 24/7 Taxi & Umrah Transfers across Jeddah, Makkah, and Madinah
     </p>
@@ -289,29 +290,32 @@
 
   </div>
 
-  <!-- Stats bar -->
-  <div class="stats-bar relative z-10 w-full">
-    <div class="max-w-4xl mx-auto px-4 py-4 grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
-      <div>
-        <div class="text-gold text-2xl font-black">19.6k+</div>
-        <div class="text-white/50 text-xs mt-0.5">Trips Completed</div>
-      </div>
-      <div>
-        <div class="text-gold text-2xl font-black">263</div>
-        <div class="text-white/50 text-xs mt-0.5">5-Star Reviews</div>
-      </div>
-      <div>
-        <div class="text-gold text-2xl font-black">50+</div>
-        <div class="text-white/50 text-xs mt-0.5">Fleet Vehicles</div>
-      </div>
-      <div>
-        <div class="text-gold text-2xl font-black">24/7</div>
-        <div class="text-white/50 text-xs mt-0.5">Support</div>
-      </div>
-    </div>
-  </div>
 
 </section>
+
+<!-- ════════════════════════════════════════
+     STATS BAR — outside hero, full visibility
+════════════════════════════════════════ -->
+<div class="bg-navy border-b border-gold/20">
+  <div class="max-w-5xl mx-auto px-4 py-6 grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+    <div>
+      <div class="text-gold text-3xl font-black">19.6k+</div>
+      <div class="text-white/60 text-xs font-medium mt-1">Trips Completed</div>
+    </div>
+    <div class="border-l border-white/10">
+      <div class="text-gold text-3xl font-black">263</div>
+      <div class="text-white/60 text-xs font-medium mt-1">5-Star Reviews</div>
+    </div>
+    <div class="border-l border-white/10">
+      <div class="text-gold text-3xl font-black">50+</div>
+      <div class="text-white/60 text-xs font-medium mt-1">Fleet Vehicles</div>
+    </div>
+    <div class="border-l border-white/10">
+      <div class="text-gold text-3xl font-black">24/7</div>
+      <div class="text-white/60 text-xs font-medium mt-1">Support</div>
+    </div>
+  </div>
+</div>
 
 
 <!-- ════════════════════════════════════════
