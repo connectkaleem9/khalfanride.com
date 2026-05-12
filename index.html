@@ -14,576 +14,764 @@
             navy: '#0A1D2E',
             gold: '#EBA815',
             'gold-dark': '#c99210',
-            'light-gray': '#F9F9F9',
-          },
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-          },
+          }
         }
       }
     }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
   <style>
+    * { font-family: 'Inter', sans-serif; }
     html { scroll-behavior: smooth; }
-    .hero-bg {
-      background: linear-gradient(135deg, #0A1D2E 0%, #122840 60%, #0A1D2E 100%);
+
+    /* Hero */
+    .hero-section {
+      background: linear-gradient(to right, rgba(10,29,46,0.92) 0%, rgba(10,29,46,0.7) 50%, rgba(10,29,46,0.92) 100%),
+                  url('https://images.unsplash.com/photo-1609520778753-ba8c8b40eeee?w=1600&q=80') center/cover no-repeat;
+      min-height: 88vh;
     }
-    .gold-glow { box-shadow: 0 4px 20px rgba(235,168,21,0.35); }
-    .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
-    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(10,29,46,0.12); }
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 60%, rgba(10,29,46,0.4) 100%);
+    }
+
+    /* Cards */
+    .service-card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(10,29,46,0.12); }
+    .service-card { transition: all 0.25s ease; }
+    .fleet-card:hover { box-shadow: 0 8px 32px rgba(10,29,46,0.1); }
+    .fleet-card { transition: all 0.2s ease; }
+
+    /* FAQ */
+    .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+    .faq-content.open { max-height: 300px; }
+    .faq-icon { transition: transform 0.3s ease; }
+    .faq-icon.open { transform: rotate(180deg); }
+
+    /* Floating WA */
     .wa-float {
       position: fixed; bottom: 24px; right: 24px; z-index: 999;
       animation: pulse-wa 2.5s infinite;
     }
     @keyframes pulse-wa {
       0%, 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
-      50% { box-shadow: 0 0 0 12px rgba(37,211,102,0); }
+      50%       { box-shadow: 0 0 0 14px rgba(37,211,102,0); }
     }
-    .price-row:nth-child(even) { background: #f3f6f9; }
-    .sticky-header { backdrop-filter: blur(10px); }
+
+    /* Price table zebra */
+    .price-row:nth-child(even) { background: #f8f9fa; }
+
+    /* Gold underline accent */
+    .section-label::after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 3px;
+      background: #EBA815;
+      margin-top: 8px;
+    }
+    .section-label.center::after { margin: 8px auto 0; }
+
+    /* Step connector */
+    .step-line { background: linear-gradient(to bottom, #EBA815, #EBA815); }
   </style>
 </head>
-<body class="font-sans text-navy bg-white">
+<body class="bg-white text-navy">
 
-  <!-- ═══════════════════════════════════════════
-       STICKY HEADER
-  ═══════════════════════════════════════════ -->
-  <header id="header" class="sticky top-0 z-50 bg-navy/95 sticky-header shadow-lg">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16 md:h-18">
+<!-- ══════════════════════════════════════
+     STICKY HEADER
+══════════════════════════════════════ -->
+<header id="header" class="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
 
-        <!-- Logo -->
-        <a href="#" class="flex items-center gap-2 shrink-0">
-          <div class="w-9 h-9 bg-gold rounded-lg flex items-center justify-center">
-            <i data-lucide="car" class="w-5 h-5 text-navy"></i>
-          </div>
-          <span class="text-white font-bold text-lg tracking-tight">Khalfan<span class="text-gold">Ride</span></span>
-        </a>
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-2 shrink-0">
+        <div class="w-9 h-9 bg-navy rounded-lg flex items-center justify-center">
+          <i data-lucide="car" class="w-5 h-5 text-gold"></i>
+        </div>
+        <span class="font-bold text-lg text-navy">Khalfan<span class="text-gold">Ride</span></span>
+      </a>
 
-        <!-- Desktop Nav -->
-        <nav class="hidden md:flex items-center gap-8">
-          <a href="#services" class="text-white/80 hover:text-gold text-sm font-medium transition-colors">Services</a>
-          <a href="#fleet" class="text-white/80 hover:text-gold text-sm font-medium transition-colors">Fleet</a>
-          <a href="#pricing" class="text-white/80 hover:text-gold text-sm font-medium transition-colors">Pricing</a>
-          <a href="#contact" class="text-white/80 hover:text-gold text-sm font-medium transition-colors">Contact</a>
-        </nav>
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#services" class="text-gray-600 hover:text-navy text-sm font-medium transition-colors">Services</a>
+        <a href="#fleet"    class="text-gray-600 hover:text-navy text-sm font-medium transition-colors">Fleet</a>
+        <a href="#pricing"  class="text-gray-600 hover:text-navy text-sm font-medium transition-colors">Pricing</a>
+        <a href="#contact"  class="text-gray-600 hover:text-navy text-sm font-medium transition-colors">Contact</a>
+      </nav>
 
-        <!-- CTA -->
+      <!-- CTA -->
+      <div class="flex items-center gap-3">
         <a href="https://wa.me/966540743000?text=Hello%20KhalfanRide!%20I'd%20like%20to%20book%20a%20transfer."
            target="_blank" rel="noopener noreferrer"
-           class="flex items-center gap-2 bg-gold hover:bg-gold-dark text-navy font-semibold text-sm px-4 py-2 rounded-lg transition-colors gold-glow">
+           class="hidden sm:flex items-center gap-2 bg-gold hover:bg-gold-dark text-navy font-bold text-sm px-5 py-2.5 rounded-lg transition-colors">
           <i data-lucide="message-circle" class="w-4 h-4"></i>
-          <span class="hidden sm:inline">Book on WhatsApp</span>
-          <span class="sm:hidden">Book</span>
+          Book on WhatsApp
         </a>
-
-        <!-- Mobile menu toggle -->
-        <button id="menu-btn" class="md:hidden text-white ml-3" aria-label="Open menu">
+        <button id="menu-btn" class="md:hidden text-navy" aria-label="Menu">
           <i data-lucide="menu" class="w-6 h-6"></i>
         </button>
       </div>
     </div>
+  </div>
 
-    <!-- Mobile Nav -->
-    <div id="mobile-menu" class="hidden md:hidden bg-navy border-t border-white/10 px-4 pb-4">
-      <nav class="flex flex-col gap-3 pt-3">
-        <a href="#services" onclick="closeMobileMenu()" class="text-white/80 hover:text-gold text-sm font-medium py-1">Services</a>
-        <a href="#fleet" onclick="closeMobileMenu()" class="text-white/80 hover:text-gold text-sm font-medium py-1">Fleet & Pricing</a>
-        <a href="#pricing" onclick="closeMobileMenu()" class="text-white/80 hover:text-gold text-sm font-medium py-1">Pricing</a>
-        <a href="#contact" onclick="closeMobileMenu()" class="text-white/80 hover:text-gold text-sm font-medium py-1">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-
-  <!-- ═══════════════════════════════════════════
-       HERO SECTION
-  ═══════════════════════════════════════════ -->
-  <section class="hero-bg min-h-[90vh] flex items-center relative overflow-hidden">
-
-    <!-- Background pattern -->
-    <div class="absolute inset-0 opacity-5">
-      <div class="absolute top-20 right-10 w-96 h-96 border border-gold rounded-full"></div>
-      <div class="absolute top-40 right-32 w-64 h-64 border border-gold rounded-full"></div>
-      <div class="absolute -bottom-10 left-10 w-72 h-72 border border-white rounded-full"></div>
-    </div>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
-      <div class="max-w-3xl">
-
-        <!-- Badge -->
-        <div class="inline-flex items-center gap-2 bg-gold/15 border border-gold/30 text-gold text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
-          <span class="w-2 h-2 bg-gold rounded-full animate-pulse"></span>
-          24/7 Available — Jeddah · Makkah · Madinah
-        </div>
-
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
-          Your Journey,<br />
-          <span class="text-gold">Our Priority.</span>
-        </h1>
-
-        <p class="text-white/70 text-lg sm:text-xl leading-relaxed mb-10 max-w-xl">
-          Premium 24/7 Taxi & Umrah Transfers across Jeddah, Makkah, and Madinah. Fixed fares, professional drivers, door-to-door comfort.
-        </p>
-
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="#fleet"
-             class="inline-flex items-center justify-center gap-2 bg-gold hover:bg-gold-dark text-navy font-bold text-base px-8 py-4 rounded-xl transition-colors gold-glow">
-            <i data-lucide="tag" class="w-5 h-5"></i>
-            Check Rates
-          </a>
-          <a href="https://wa.me/966540743000?text=Hello%20KhalfanRide!%20I'd%20like%20to%20book%20a%20transfer."
-             target="_blank" rel="noopener noreferrer"
-             class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold text-base px-8 py-4 rounded-xl transition-colors">
-            <i data-lucide="message-circle" class="w-5 h-5"></i>
-            Book on WhatsApp
-          </a>
-        </div>
-
-        <!-- Trust row -->
-        <div class="flex flex-wrap items-center gap-6 mt-12">
-          <div class="flex items-center gap-2 text-white/60 text-sm">
-            <i data-lucide="shield-check" class="w-4 h-4 text-gold"></i>
-            Fixed Fares — No Surge
-          </div>
-          <div class="flex items-center gap-2 text-white/60 text-sm">
-            <i data-lucide="clock" class="w-4 h-4 text-gold"></i>
-            24/7 Service
-          </div>
-          <div class="flex items-center gap-2 text-white/60 text-sm">
-            <i data-lucide="map-pin" class="w-4 h-4 text-gold"></i>
-            Door-to-Door
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 pb-4">
+    <nav class="flex flex-col gap-3 pt-3">
+      <a href="#services" onclick="closeMobileMenu()" class="text-gray-600 hover:text-navy text-sm font-medium py-1">Services</a>
+      <a href="#fleet"    onclick="closeMobileMenu()" class="text-gray-600 hover:text-navy text-sm font-medium py-1">Fleet & Pricing</a>
+      <a href="#pricing"  onclick="closeMobileMenu()" class="text-gray-600 hover:text-navy text-sm font-medium py-1">Pricing</a>
+      <a href="#contact"  onclick="closeMobileMenu()" class="text-gray-600 hover:text-navy text-sm font-medium py-1">Contact</a>
+      <a href="https://wa.me/966540743000" target="_blank" rel="noopener noreferrer"
+         class="bg-gold text-navy font-bold text-sm px-4 py-2.5 rounded-lg text-center mt-1">Book on WhatsApp</a>
+    </nav>
+  </div>
+</header>
 
 
-  <!-- ═══════════════════════════════════════════
-       FEATURES GRID
-  ═══════════════════════════════════════════ -->
-  <section id="services" class="bg-light-gray py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- ══════════════════════════════════════
+     HERO SECTION
+══════════════════════════════════════ -->
+<section class="hero-section relative flex items-center">
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20">
+    <div class="max-w-2xl">
 
-      <div class="text-center mb-14">
-        <p class="text-gold font-semibold text-sm uppercase tracking-widest mb-2">Why Choose Us</p>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-navy">The KhalfanRide Difference</h2>
+      <!-- Badge -->
+      <div class="inline-flex items-center gap-2 bg-gold/20 border border-gold/40 text-gold text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
+        <span class="w-1.5 h-1.5 bg-gold rounded-full animate-pulse"></span>
+        24/7 Available · Jeddah · Makkah · Madinah
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-none tracking-tight mb-5">
+        YOUR JOURNEY,<br/>
+        <span class="text-gold">OUR PRIORITY.</span>
+      </h1>
 
-        <!-- Card 1 -->
-        <div class="bg-white rounded-2xl p-7 card-hover border border-gray-100">
-          <div class="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center mb-5">
-            <i data-lucide="clock-3" class="w-6 h-6 text-gold"></i>
-          </div>
-          <h3 class="font-bold text-lg text-navy mb-2">24/7 Service</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Always available — early morning flights, late night arrivals, or last-minute Umrah plans.</p>
-        </div>
+      <p class="text-white/70 text-base sm:text-lg leading-relaxed mb-8 max-w-lg">
+        Premium 24/7 Taxi & Umrah Transfers across Jeddah, Makkah, and Madinah. Fixed fares, professional drivers, door-to-door comfort.
+      </p>
 
-        <!-- Card 2 -->
-        <div class="bg-white rounded-2xl p-7 card-hover border border-gray-100">
-          <div class="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center mb-5">
-            <i data-lucide="user-check" class="w-6 h-6 text-gold"></i>
-          </div>
-          <h3 class="font-bold text-lg text-navy mb-2">Professional Drivers</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">English & Urdu speaking drivers. Vetted, experienced, and trained for pilgrim hospitality.</p>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="bg-white rounded-2xl p-7 card-hover border border-gray-100">
-          <div class="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center mb-5">
-            <i data-lucide="badge-dollar-sign" class="w-6 h-6 text-gold"></i>
-          </div>
-          <h3 class="font-bold text-lg text-navy mb-2">Fixed Transparent Fares</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">No meters, no surge pricing. The price you see is the price you pay — including during Ramadan & Hajj.</p>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="bg-white rounded-2xl p-7 card-hover border border-gray-100">
-          <div class="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center mb-5">
-            <i data-lucide="map-pin-check" class="w-6 h-6 text-gold"></i>
-          </div>
-          <h3 class="font-bold text-lg text-navy mb-2">Door-to-Door Pickup</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">We pick you up from your hotel, home, or airport — and drop you exactly where you need to be.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ═══════════════════════════════════════════
-       FLEET & PRICING
-  ═══════════════════════════════════════════ -->
-  <section id="fleet" class="bg-white py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-      <div class="text-center mb-14">
-        <p class="text-gold font-semibold text-sm uppercase tracking-widest mb-2">Fleet & Pricing</p>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-navy">Choose Your Vehicle</h2>
-        <p class="text-gray-500 mt-3 text-base">All prices in SAR · Per vehicle, not per person · Pay on arrival</p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6" id="pricing">
-
-        <!-- ── Toyota Camry ── -->
-        <div class="rounded-2xl border-2 border-gray-100 hover:border-gold overflow-hidden card-hover">
-          <div class="bg-navy px-6 py-5">
-            <div class="flex items-center justify-between mb-1">
-              <h3 class="text-white font-bold text-lg">Toyota Camry</h3>
-              <span class="bg-gold text-navy text-xs font-bold px-2.5 py-1 rounded-full">Popular</span>
-            </div>
-            <div class="flex items-center gap-1.5 text-white/60 text-sm">
-              <i data-lucide="users" class="w-4 h-4"></i>
-              Up to 4 Passengers
-            </div>
-          </div>
-          <div class="p-0">
-            <table class="w-full text-sm">
-              <tbody>
-                <tr class="price-row"><td class="px-5 py-3 text-gray-600">Jeddah → Makkah</td><td class="px-5 py-3 text-right font-bold text-navy">250 SAR</td></tr>
-                <tr class="price-row"><td class="px-5 py-3 text-gray-600">Makkah → Madina</td><td class="px-5 py-3 text-right font-bold text-navy">450 SAR</td></tr>
-                <tr class="price-row"><td class="px-5 py-3 text-gray-600">Madina → Makkah</td><td class="px-5 py-3 text-right font-bold text-navy">450 SAR</td></tr>
-                <tr class="price-row"><td class="px-5 py-3 text-gray-600">Jeddah → Madina</td><td class="px-5 py-3 text-right font-bold text-navy">500 SAR</td></tr>
-                <tr class="price-row"><td class="px-5 py-3 text-gray-600">Ziyarat Tour</td><td class="px-5 py-3 text-right font-bold text-navy">200 SAR</td></tr>
-                <tr class="price-row"><td class="px-5 py-3 text-gray-600">Taif Return</td><td class="px-5 py-3 text-right font-bold text-navy">650 SAR</td></tr>
-                <tr class="price-row"><td class="px-5 py-3 text-gray-600">Per Hour</td><td class="px-5 py-3 text-right font-bold text-gold">100 SAR</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="px-5 pb-5 pt-3">
-            <a href="https://wa.me/966540743000?text=Hello!%20I'd%20like%20to%20book%20a%20Toyota%20Camry%20transfer."
-               target="_blank" rel="noopener noreferrer"
-               class="w-full flex items-center justify-center gap-2 bg-gold hover:bg-gold-dark text-navy font-bold py-3 rounded-xl transition-colors text-sm">
-              <i data-lucide="message-circle" class="w-4 h-4"></i>
-              Book This Vehicle
-            </a>
-          </div>
-        </div>
-
-        <!-- ── Hyundai Staria ── -->
-        <div class="rounded-2xl border-2 border-gray-100 hover:border-gold overflow-hidden card-hover">
-          <div class="bg-navy px-6 py-5">
-            <h3 class="text-white font-bold text-lg mb-1">Hyundai Staria</h3>
-            <div class="flex items-center gap-1.5 text-white/60 text-sm">
-              <i data-lucide="users" class="w-4 h-4"></i>
-              Up to 7 Passengers
-            </div>
-          </div>
-          <div class="p-0">
-            <table class="w-full text-sm">
-              <tbody>
-                <tr class="price-row"><td class="px-5 py-3 text-gray-600">Jeddah → Makkah</td><td class="px-5 py-3 text-right font-bold text-navy">300 SAR</td></tr>
-                <tr class="price-row"><td class="px-5 py-3 text-gray-600">Makkah → Madina</td><td class="px-5 py-3 text-right font-bold text-navy">600 SAR</td></tr>
-                <tr class="price-row"><td class="px-5 py-3 text-gray-600">Madina → Makkah</td><td class="px-5 py-3 text-right font-bold text-navy">600 SAR</td></tr>
-                <tr class="price-row"><td class="px-5 py-3 text-gray-600">Jeddah → Madina</td><td class="px-5 py-3 text-right font-bold text-navy">650 SAR</td></tr>
-                <tr class="price-row"><td class="px-5 py-3 text-gray-600">Ziyarat Tour</td><td class="px-5 py-3 text-right font-bold text-navy">250 SAR</td></tr>
-                <tr class="price-row"><td class="px-5 py-3 text-gray-600">Taif Return</td><td class="px-5 py-3 text-right font-bold text-navy">800 SAR</td></tr>
-                <tr class="price-row"><td class="px-5 py-3 text-gray-600">Per Hour</td><td class="px-5 py-3 text-right font-bold text-gold">150 SAR</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="px-5 pb-5 pt-3">
-            <a href="https://wa.me/966540743000?text=Hello!%20I'd%20like%20to%20book%20a%20Hyundai%20Staria%20transfer."
-               target="_blank" rel="noopener noreferrer"
-               class="w-full flex items-center justify-center gap-2 bg-gold hover:bg-gold-dark text-navy font-bold py-3 rounded-xl transition-colors text-sm">
-              <i data-lucide="message-circle" class="w-4 h-4"></i>
-              Book This Vehicle
-            </a>
-          </div>
-        </div>
-
-        <!-- ── Hyundai H1 Starex ── -->
-        <div class="rounded-2xl border-2 border-gray-100 hover:border-gold overflow-hidden card-hover">
-          <div class="bg-navy px-6 py-5">
-            <h3 class="text-white font-bold text-lg mb-1">Hyundai H1 Starex</h3>
-            <div class="flex items-center gap-1.5 text-white/60 text-sm">
-              <i data-lucide="users" class="w-4 h-4"></i>
-              Up to 10 Passengers
-            </div>
-          </div>
-          <div class="p-0">
-            <table class="w-full text-sm">
-              <tbody>
-                <tr class="price-row"><td class="px-5 py-3 text-gray-600">Jeddah → Makkah</td><td class="px-5 py-3 text-right font-bold text-navy">300 SAR</td></tr>
-                <tr class="price-row"><td class="px-5 py-3 text-gray-600">Makkah → Madina</td><td class="px-5 py-3 text-right font-bold text-navy">650 SAR</td></tr>
-                <tr class="price-row"><td class="px-5 py-3 text-gray-600">Madina → Makkah</td><td class="px-5 py-3 text-right font-bold text-navy">650 SAR</td></tr>
-                <tr class="price-row"><td class="px-5 py-3 text-gray-600">Jeddah → Madina</td><td class="px-5 py-3 text-right font-bold text-navy">700 SAR</td></tr>
-                <tr class="price-row"><td class="px-5 py-3 text-gray-600">Ziyarat Tour</td><td class="px-5 py-3 text-right font-bold text-navy">300 SAR</td></tr>
-                <tr class="price-row"><td class="px-5 py-3 text-gray-600">Taif Return</td><td class="px-5 py-3 text-right font-bold text-navy">900 SAR</td></tr>
-                <tr class="price-row"><td class="px-5 py-3 text-gray-600">Per Hour</td><td class="px-5 py-3 text-right font-bold text-gold">150 SAR</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="px-5 pb-5 pt-3">
-            <a href="https://wa.me/966540743000?text=Hello!%20I'd%20like%20to%20book%20a%20Hyundai%20H1%20Starex%20transfer."
-               target="_blank" rel="noopener noreferrer"
-               class="w-full flex items-center justify-center gap-2 bg-gold hover:bg-gold-dark text-navy font-bold py-3 rounded-xl transition-colors text-sm">
-              <i data-lucide="message-circle" class="w-4 h-4"></i>
-              Book This Vehicle
-            </a>
-          </div>
-        </div>
-
-        <!-- ── Toyota Hiace ── -->
-        <div class="rounded-2xl border-2 border-gray-100 hover:border-gold overflow-hidden card-hover">
-          <div class="bg-navy px-6 py-5">
-            <h3 class="text-white font-bold text-lg mb-1">Toyota Hiace</h3>
-            <div class="flex items-center gap-1.5 text-white/60 text-sm">
-              <i data-lucide="users" class="w-4 h-4"></i>
-              Up to 12 Passengers
-            </div>
-          </div>
-          <div class="p-0">
-            <table class="w-full text-sm">
-              <tbody>
-                <tr class="price-row"><td class="px-5 py-3 text-gray-600">Jeddah → Makkah</td><td class="px-5 py-3 text-right font-bold text-navy">350 SAR</td></tr>
-                <tr class="price-row"><td class="px-5 py-3 text-gray-600">Makkah → Madina</td><td class="px-5 py-3 text-right font-bold text-navy">750 SAR</td></tr>
-                <tr class="price-row"><td class="px-5 py-3 text-gray-600">Madina → Makkah</td><td class="px-5 py-3 text-right font-bold text-navy">750 SAR</td></tr>
-                <tr class="price-row"><td class="px-5 py-3 text-gray-600">Jeddah → Madina</td><td class="px-5 py-3 text-right font-bold text-navy">800 SAR</td></tr>
-                <tr class="price-row"><td class="px-5 py-3 text-gray-600">Ziyarat Tour</td><td class="px-5 py-3 text-right font-bold text-navy">350 SAR</td></tr>
-                <tr class="price-row"><td class="px-5 py-3 text-gray-600">Taif Return</td><td class="px-5 py-3 text-right font-bold text-navy">1,000 SAR</td></tr>
-                <tr class="price-row"><td class="px-5 py-3 text-gray-600">Per Hour</td><td class="px-5 py-3 text-right font-bold text-gold">200 SAR</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="px-5 pb-5 pt-3">
-            <a href="https://wa.me/966540743000?text=Hello!%20I'd%20like%20to%20book%20a%20Toyota%20Hiace%20transfer."
-               target="_blank" rel="noopener noreferrer"
-               class="w-full flex items-center justify-center gap-2 bg-gold hover:bg-gold-dark text-navy font-bold py-3 rounded-xl transition-colors text-sm">
-              <i data-lucide="message-circle" class="w-4 h-4"></i>
-              Book This Vehicle
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ═══════════════════════════════════════════
-       STATISTICS BAR
-  ═══════════════════════════════════════════ -->
-  <section class="bg-navy py-14">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-
-        <div>
-          <div class="text-gold text-4xl font-extrabold mb-1">1,000+</div>
-          <div class="text-white/60 text-sm font-medium">Happy Pilgrims</div>
-        </div>
-        <div>
-          <div class="text-gold text-4xl font-extrabold mb-1">24/7</div>
-          <div class="text-white/60 text-sm font-medium">Support Available</div>
-        </div>
-        <div>
-          <div class="text-gold text-4xl font-extrabold mb-1">50+</div>
-          <div class="text-white/60 text-sm font-medium">Vehicles in Fleet</div>
-        </div>
-        <div>
-          <div class="text-gold text-4xl font-extrabold mb-1">100%</div>
-          <div class="text-white/60 text-sm font-medium">Safety Record</div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ═══════════════════════════════════════════
-       BOOKING PROCESS
-  ═══════════════════════════════════════════ -->
-  <section class="bg-light-gray py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-      <div class="text-center mb-14">
-        <p class="text-gold font-semibold text-sm uppercase tracking-widest mb-2">How It Works</p>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-navy">Book in 3 Simple Steps</h2>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-
-        <!-- Connector line (desktop) -->
-        <div class="hidden md:block absolute top-10 left-1/4 right-1/4 h-0.5 bg-gold/30 z-0"></div>
-
-        <!-- Step 1 -->
-        <div class="bg-white rounded-2xl p-8 text-center card-hover border border-gray-100 relative z-10">
-          <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center mx-auto mb-5">
-            <i data-lucide="map" class="w-7 h-7 text-navy"></i>
-          </div>
-          <div class="text-gold font-extrabold text-xs uppercase tracking-widest mb-2">Step 1</div>
-          <h3 class="font-bold text-xl text-navy mb-3">Select Your Route</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Choose your pickup city, destination, vehicle type, and travel date from our fleet above.</p>
-        </div>
-
-        <!-- Step 2 -->
-        <div class="bg-white rounded-2xl p-8 text-center card-hover border border-gray-100 relative z-10">
-          <div class="w-16 h-16 bg-navy rounded-full flex items-center justify-center mx-auto mb-5">
-            <i data-lucide="message-circle" class="w-7 h-7 text-gold"></i>
-          </div>
-          <div class="text-gold font-extrabold text-xs uppercase tracking-widest mb-2">Step 2</div>
-          <h3 class="font-bold text-xl text-navy mb-3">Confirm on WhatsApp</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Chat with us on WhatsApp. Share your details and get instant booking confirmation with driver info.</p>
-        </div>
-
-        <!-- Step 3 -->
-        <div class="bg-white rounded-2xl p-8 text-center card-hover border border-gray-100 relative z-10">
-          <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center mx-auto mb-5">
-            <i data-lucide="banknote" class="w-7 h-7 text-navy"></i>
-          </div>
-          <div class="text-gold font-extrabold text-xs uppercase tracking-widest mb-2">Step 3</div>
-          <h3 class="font-bold text-xl text-navy mb-3">Pay on Arrival</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">No prepayment needed. Pay your fixed fare in cash directly to the driver upon arrival. Zero hidden fees.</p>
-        </div>
-
-      </div>
-
-      <!-- CTA -->
-      <div class="text-center mt-12">
+      <!-- CTAs -->
+      <div class="flex flex-wrap gap-3 mb-12">
+        <a href="#fleet"
+           class="flex items-center gap-2 bg-gold hover:bg-gold-dark text-navy font-bold px-7 py-3.5 rounded-xl transition-colors text-sm shadow-lg">
+          <i data-lucide="tag" class="w-4 h-4"></i>
+          Check Rates
+        </a>
         <a href="https://wa.me/966540743000?text=Hello%20KhalfanRide!%20I'd%20like%20to%20book%20a%20transfer."
            target="_blank" rel="noopener noreferrer"
-           class="inline-flex items-center gap-3 bg-navy hover:bg-navy/90 text-white font-bold text-base px-10 py-4 rounded-xl transition-colors shadow-lg">
-          <i data-lucide="message-circle" class="w-5 h-5 text-gold"></i>
-          Start Booking on WhatsApp
+           class="flex items-center gap-2 bg-white/15 hover:bg-white/25 border border-white/30 text-white font-semibold px-7 py-3.5 rounded-xl transition-colors text-sm">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          WhatsApp Us
+        </a>
+      </div>
+
+      <!-- Stats -->
+      <div class="flex flex-wrap items-center gap-8">
+        <div>
+          <div class="text-gold text-3xl font-black">19.6k+</div>
+          <div class="text-white/50 text-xs font-medium mt-0.5">Trips Completed</div>
+        </div>
+        <div class="w-px h-10 bg-white/20"></div>
+        <div>
+          <div class="text-gold text-3xl font-black">263</div>
+          <div class="text-white/50 text-xs font-medium mt-0.5">5-Star Reviews</div>
+        </div>
+        <div class="w-px h-10 bg-white/20"></div>
+        <div>
+          <div class="text-gold text-3xl font-black">50+</div>
+          <div class="text-white/50 text-xs font-medium mt-0.5">Vehicles</div>
+        </div>
+        <div class="w-px h-10 bg-white/20"></div>
+        <div>
+          <div class="text-gold text-3xl font-black">24/7</div>
+          <div class="text-white/50 text-xs font-medium mt-0.5">Support</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     BOOK YOUR RIDE — SERVICE CARDS
+══════════════════════════════════════ -->
+<section id="services" class="bg-white py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="mb-12">
+      <p class="text-gold font-bold text-xs uppercase tracking-widest mb-2">Our Services</p>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-navy section-label">BOOK YOUR RIDE ACROSS SAUDI ARABIA</h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      <div class="service-card border border-gray-100 rounded-2xl p-6 cursor-pointer">
+        <div class="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center mb-5">
+          <i data-lucide="plane-landing" class="w-6 h-6 text-gold"></i>
+        </div>
+        <h3 class="font-bold text-base text-navy mb-2">Airport Transfers</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Door-to-door pickup from King Abdulaziz International Airport to any hotel or city.</p>
+        <a href="https://wa.me/966540743000?text=Hello!%20I%20need%20an%20airport%20transfer." target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-1.5 text-gold font-semibold text-sm mt-4 hover:underline">
+          Book Now <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+
+      <div class="service-card border border-gray-100 rounded-2xl p-6 cursor-pointer">
+        <div class="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center mb-5">
+          <i data-lucide="moon" class="w-6 h-6 text-gold"></i>
+        </div>
+        <h3 class="font-bold text-base text-navy mb-2">Umrah Transfers</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Spiritual journeys handled with care. Jeddah ↔ Makkah ↔ Madinah — fixed fares, no surge.</p>
+        <a href="https://wa.me/966540743000?text=Hello!%20I%20need%20an%20Umrah%20transfer." target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-1.5 text-gold font-semibold text-sm mt-4 hover:underline">
+          Book Now <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+
+      <div class="service-card border border-gray-100 rounded-2xl p-6 cursor-pointer">
+        <div class="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center mb-5">
+          <i data-lucide="map" class="w-6 h-6 text-gold"></i>
+        </div>
+        <h3 class="font-bold text-base text-navy mb-2">Ziyarat City Tours</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Guided tours of holy sites in Makkah and Madinah with knowledgeable, patient drivers.</p>
+        <a href="https://wa.me/966540743000?text=Hello!%20I%20need%20a%20Ziyarat%20tour." target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-1.5 text-gold font-semibold text-sm mt-4 hover:underline">
+          Book Now <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+
+      <div class="service-card border border-gray-100 rounded-2xl p-6 cursor-pointer">
+        <div class="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center mb-5">
+          <i data-lucide="clock" class="w-6 h-6 text-gold"></i>
+        </div>
+        <h3 class="font-bold text-base text-navy mb-2">Hourly Hire</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Flexible hourly rental with a professional driver. Perfect for business visits or city errands.</p>
+        <a href="https://wa.me/966540743000?text=Hello!%20I%20need%20an%20hourly%20hire." target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-1.5 text-gold font-semibold text-sm mt-4 hover:underline">
+          Book Now <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
         </a>
       </div>
 
     </div>
-  </section>
+  </div>
+</section>
 
 
-  <!-- ═══════════════════════════════════════════
-       FOOTER
-  ═══════════════════════════════════════════ -->
-  <footer id="contact" class="bg-navy text-white">
+<!-- ══════════════════════════════════════
+     3 STEPS + TRUST SIGNALS (two column)
+══════════════════════════════════════ -->
+<section class="bg-gray-50 py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <!-- LEFT: 3 Steps -->
+      <div>
+        <p class="text-gold font-bold text-xs uppercase tracking-widest mb-2">Simple Process</p>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-navy mb-10 section-label">BOOK YOUR RIDE IN 3 EASY STEPS</h2>
 
-        <!-- Brand -->
-        <div>
-          <div class="flex items-center gap-2 mb-4">
-            <div class="w-9 h-9 bg-gold rounded-lg flex items-center justify-center">
-              <i data-lucide="car" class="w-5 h-5 text-navy"></i>
+        <div class="space-y-0">
+
+          <div class="flex gap-5">
+            <div class="flex flex-col items-center">
+              <div class="w-10 h-10 bg-gold rounded-full flex items-center justify-center text-navy font-black text-base shrink-0">1</div>
+              <div class="w-0.5 h-16 bg-gold/20 mt-2"></div>
             </div>
-            <span class="font-bold text-xl">Khalfan<span class="text-gold">Ride</span></span>
+            <div class="pb-8">
+              <h3 class="font-bold text-base text-navy mb-1.5">Select Your Route & Vehicle</h3>
+              <p class="text-gray-500 text-sm leading-relaxed">Browse our fleet options and choose the vehicle that fits your group size and budget.</p>
+            </div>
           </div>
-          <p class="text-white/50 text-sm leading-relaxed max-w-xs">
-            Premium 24/7 private transportation across the holy cities of Saudi Arabia. Your comfort and safety are our mission.
-          </p>
-        </div>
 
-        <!-- Contact -->
-        <div>
-          <h4 class="font-bold text-base mb-5 text-gold">Contact Us</h4>
-          <ul class="space-y-3 text-sm text-white/60">
-            <li class="flex items-center gap-2">
-              <i data-lucide="message-circle" class="w-4 h-4 text-gold shrink-0"></i>
-              <a href="https://wa.me/966540743000" target="_blank" rel="noopener noreferrer" class="hover:text-gold transition-colors">WhatsApp: +966 54 074 3000</a>
-            </li>
-            <li class="flex items-center gap-2">
-              <i data-lucide="mail" class="w-4 h-4 text-gold shrink-0"></i>
-              <a href="mailto:info@khalfanride.com" class="hover:text-gold transition-colors">info@khalfanride.com</a>
-            </li>
-            <li class="flex items-center gap-2">
-              <i data-lucide="map-pin" class="w-4 h-4 text-gold shrink-0"></i>
-              <span>Jeddah · Makkah · Madinah, Saudi Arabia</span>
-            </li>
-            <li class="flex items-center gap-2">
-              <i data-lucide="clock" class="w-4 h-4 text-gold shrink-0"></i>
-              <span>Available 24 hours, 7 days a week</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Quick Links + Social -->
-        <div>
-          <h4 class="font-bold text-base mb-5 text-gold">Quick Links</h4>
-          <ul class="space-y-2 text-sm text-white/60 mb-6">
-            <li><a href="#services" class="hover:text-gold transition-colors">Our Services</a></li>
-            <li><a href="#fleet" class="hover:text-gold transition-colors">Fleet & Pricing</a></li>
-            <li><a href="#contact" class="hover:text-gold transition-colors">Contact</a></li>
-            <li>
-              <a href="https://wa.me/966540743000?text=Hello%20KhalfanRide!%20I'd%20like%20to%20book%20a%20transfer."
-                 target="_blank" rel="noopener noreferrer"
-                 class="text-gold hover:text-gold-dark font-semibold transition-colors">Book on WhatsApp →</a>
-            </li>
-          </ul>
-          <!-- Social -->
-          <div class="flex items-center gap-3">
-            <a href="#" aria-label="Instagram" class="w-9 h-9 bg-white/10 hover:bg-gold hover:text-navy rounded-lg flex items-center justify-center transition-colors">
-              <i data-lucide="instagram" class="w-4 h-4"></i>
-            </a>
-            <a href="#" aria-label="Twitter / X" class="w-9 h-9 bg-white/10 hover:bg-gold hover:text-navy rounded-lg flex items-center justify-center transition-colors">
-              <i data-lucide="twitter" class="w-4 h-4"></i>
-            </a>
-            <a href="https://wa.me/966540743000" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
-               class="w-9 h-9 bg-white/10 hover:bg-gold hover:text-navy rounded-lg flex items-center justify-center transition-colors">
-              <i data-lucide="message-circle" class="w-4 h-4"></i>
-            </a>
+          <div class="flex gap-5">
+            <div class="flex flex-col items-center">
+              <div class="w-10 h-10 bg-gold rounded-full flex items-center justify-center text-navy font-black text-base shrink-0">2</div>
+              <div class="w-0.5 h-16 bg-gold/20 mt-2"></div>
+            </div>
+            <div class="pb-8">
+              <h3 class="font-bold text-base text-navy mb-1.5">Confirm on WhatsApp</h3>
+              <p class="text-gray-500 text-sm leading-relaxed">Message us your trip details — date, time, and pickup location. Get instant confirmation with driver info.</p>
+            </div>
           </div>
+
+          <div class="flex gap-5">
+            <div class="flex flex-col items-center">
+              <div class="w-10 h-10 bg-gold rounded-full flex items-center justify-center text-navy font-black text-base shrink-0">3</div>
+            </div>
+            <div>
+              <h3 class="font-bold text-base text-navy mb-1.5">Pay on Arrival — Cash</h3>
+              <p class="text-gray-500 text-sm leading-relaxed">No prepayment or card needed. Pay the fixed fare in cash directly to your driver. Zero hidden fees.</p>
+            </div>
+          </div>
+
         </div>
 
+        <a href="https://wa.me/966540743000?text=Hello%20KhalfanRide!%20I'd%20like%20to%20book%20a%20transfer."
+           target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-navy font-bold px-6 py-3 rounded-xl text-sm mt-6 transition-colors">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          Start Booking
+        </a>
       </div>
+
+      <!-- RIGHT: Trust Signals -->
+      <div>
+        <p class="text-gold font-bold text-xs uppercase tracking-widest mb-2">Social Proof</p>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-navy mb-10 section-label">TRUSTED BY 1000+ PILGRIMS</h2>
+
+        <div class="grid grid-cols-2 gap-4 mb-8">
+          <div class="bg-white border border-gray-100 rounded-2xl p-5 text-center">
+            <div class="text-3xl font-black text-gold mb-1">1,000+</div>
+            <div class="text-gray-500 text-xs font-medium">Happy Pilgrims</div>
+          </div>
+          <div class="bg-white border border-gray-100 rounded-2xl p-5 text-center">
+            <div class="text-3xl font-black text-gold mb-1">4.9★</div>
+            <div class="text-gray-500 text-xs font-medium">Average Rating</div>
+          </div>
+          <div class="bg-white border border-gray-100 rounded-2xl p-5 text-center">
+            <div class="text-3xl font-black text-gold mb-1">50+</div>
+            <div class="text-gray-500 text-xs font-medium">Fleet Vehicles</div>
+          </div>
+          <div class="bg-white border border-gray-100 rounded-2xl p-5 text-center">
+            <div class="text-3xl font-black text-gold mb-1">100%</div>
+            <div class="text-gray-500 text-xs font-medium">Safety Record</div>
+          </div>
+        </div>
+
+        <!-- Review cards -->
+        <div class="space-y-3">
+          <div class="bg-white border border-gray-100 rounded-xl p-4">
+            <div class="flex items-center gap-1 mb-2">
+              <span class="text-gold text-sm">★★★★★</span>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed">"Excellent service! Driver was on time, very professional. Will definitely use KhalfanRide for all our Umrah trips."</p>
+            <p class="text-navy font-semibold text-xs mt-2">— Ahmed K., Pakistan</p>
+          </div>
+          <div class="bg-white border border-gray-100 rounded-xl p-4">
+            <div class="flex items-center gap-1 mb-2">
+              <span class="text-gold text-sm">★★★★★</span>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed">"Fixed pricing with no surprises. Comfortable SUV, friendly driver who spoke English well. Highly recommended!"</p>
+            <p class="text-navy font-semibold text-xs mt-2">— Fatima R., Malaysia</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     VIP FLEET & PRICING
+══════════════════════════════════════ -->
+<section id="fleet" class="bg-white py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="text-center mb-14">
+      <p class="text-gold font-bold text-xs uppercase tracking-widest mb-2">Choose Your Ride</p>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-navy mb-2">VIP TAXI FLEET OPTIONS</h2>
+      <p class="text-gray-500 text-sm">All prices in SAR · Per vehicle · Pay on arrival</p>
     </div>
 
-    <!-- Bottom bar -->
-    <div class="border-t border-white/10">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-white/40 text-xs">
-        <span>© 2025 KhalfanRide. All rights reserved.</span>
-        <span>Premium Transportation · Saudi Arabia</span>
+    <div class="space-y-6" id="pricing">
+
+      <!-- ── Toyota Camry ── -->
+      <div class="fleet-card border border-gray-200 rounded-2xl overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-3">
+          <!-- Car info -->
+          <div class="bg-navy p-7 flex flex-col justify-between">
+            <div>
+              <div class="inline-flex items-center gap-1.5 bg-gold/20 text-gold text-xs font-bold px-2.5 py-1 rounded-full mb-4">
+                <i data-lucide="star" class="w-3 h-3"></i> Most Popular
+              </div>
+              <h3 class="text-white font-extrabold text-2xl mb-1">Toyota Camry</h3>
+              <div class="flex items-center gap-1.5 text-white/50 text-sm mb-5">
+                <i data-lucide="users" class="w-4 h-4"></i> Up to 4 Passengers
+              </div>
+              <div class="space-y-2 text-white/60 text-sm">
+                <div class="flex items-center gap-2"><i data-lucide="wind" class="w-3.5 h-3.5 text-gold"></i> Air Conditioned</div>
+                <div class="flex items-center gap-2"><i data-lucide="luggage" class="w-3.5 h-3.5 text-gold"></i> 2 Large Bags</div>
+                <div class="flex items-center gap-2"><i data-lucide="wifi" class="w-3.5 h-3.5 text-gold"></i> Free WiFi</div>
+              </div>
+            </div>
+            <a href="https://wa.me/966540743000?text=Hello!%20I'd%20like%20to%20book%20a%20Toyota%20Camry."
+               target="_blank" rel="noopener noreferrer"
+               class="mt-6 flex items-center justify-center gap-2 bg-gold hover:bg-gold-dark text-navy font-bold py-3 rounded-xl text-sm transition-colors">
+              <i data-lucide="message-circle" class="w-4 h-4"></i> Book Now
+            </a>
+          </div>
+          <!-- Price table -->
+          <div class="lg:col-span-2">
+            <img src="https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=800&q=80"
+                 alt="Toyota Camry" class="w-full h-40 object-cover lg:h-36" />
+            <table class="w-full text-sm">
+              <tbody>
+                <tr class="price-row"><td class="px-5 py-3 text-gray-600 font-medium">Jeddah → Makkah</td><td class="px-5 py-3 text-right"><span class="font-bold text-navy">250</span> <span class="text-gray-400 text-xs">SAR</span></td>
+                  <td class="px-5 py-3 text-gray-600 font-medium">Makkah → Madina</td><td class="px-5 py-3 text-right"><span class="font-bold text-navy">450</span> <span class="text-gray-400 text-xs">SAR</span></td></tr>
+                <tr class="price-row"><td class="px-5 py-3 text-gray-600 font-medium">Madina → Makkah</td><td class="px-5 py-3 text-right"><span class="font-bold text-navy">450</span> <span class="text-gray-400 text-xs">SAR</span></td>
+                  <td class="px-5 py-3 text-gray-600 font-medium">Jeddah → Madina</td><td class="px-5 py-3 text-right"><span class="font-bold text-navy">500</span> <span class="text-gray-400 text-xs">SAR</span></td></tr>
+                <tr class="price-row"><td class="px-5 py-3 text-gray-600 font-medium">Ziyarat Tour</td><td class="px-5 py-3 text-right"><span class="font-bold text-navy">200</span> <span class="text-gray-400 text-xs">SAR</span></td>
+                  <td class="px-5 py-3 text-gray-600 font-medium">Taif Return</td><td class="px-5 py-3 text-right"><span class="font-bold text-navy">650</span> <span class="text-gray-400 text-xs">SAR</span></td></tr>
+                <tr class="price-row"><td class="px-5 py-3 text-gray-600 font-medium">Per Hour</td><td class="px-5 py-3 text-right"><span class="font-bold text-gold">100</span> <span class="text-gray-400 text-xs">SAR</span></td><td colspan="2"></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
+
+      <!-- ── Hyundai Staria ── -->
+      <div class="fleet-card border border-gray-200 rounded-2xl overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-3">
+          <div class="bg-navy p-7 flex flex-col justify-between">
+            <div>
+              <h3 class="text-white font-extrabold text-2xl mb-1">Hyundai Staria</h3>
+              <div class="flex items-center gap-1.5 text-white/50 text-sm mb-5">
+                <i data-lucide="users" class="w-4 h-4"></i> Up to 7 Passengers
+              </div>
+              <div class="space-y-2 text-white/60 text-sm">
+                <div class="flex items-center gap-2"><i data-lucide="wind" class="w-3.5 h-3.5 text-gold"></i> Air Conditioned</div>
+                <div class="flex items-center gap-2"><i data-lucide="luggage" class="w-3.5 h-3.5 text-gold"></i> 4 Large Bags</div>
+                <div class="flex items-center gap-2"><i data-lucide="wifi" class="w-3.5 h-3.5 text-gold"></i> Free WiFi</div>
+              </div>
+            </div>
+            <a href="https://wa.me/966540743000?text=Hello!%20I'd%20like%20to%20book%20a%20Hyundai%20Staria."
+               target="_blank" rel="noopener noreferrer"
+               class="mt-6 flex items-center justify-center gap-2 bg-gold hover:bg-gold-dark text-navy font-bold py-3 rounded-xl text-sm transition-colors">
+              <i data-lucide="message-circle" class="w-4 h-4"></i> Book Now
+            </a>
+          </div>
+          <div class="lg:col-span-2">
+            <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=800&q=80"
+                 alt="Hyundai Staria" class="w-full h-40 object-cover lg:h-36" />
+            <table class="w-full text-sm">
+              <tbody>
+                <tr class="price-row"><td class="px-5 py-3 text-gray-600 font-medium">Jeddah → Makkah</td><td class="px-5 py-3 text-right"><span class="font-bold text-navy">300</span> <span class="text-gray-400 text-xs">SAR</span></td>
+                  <td class="px-5 py-3 text-gray-600 font-medium">Makkah → Madina</td><td class="px-5 py-3 text-right"><span class="font-bold text-navy">600</span> <span class="text-gray-400 text-xs">SAR</span></td></tr>
+                <tr class="price-row"><td class="px-5 py-3 text-gray-600 font-medium">Madina → Makkah</td><td class="px-5 py-3 text-right"><span class="font-bold text-navy">600</span> <span class="text-gray-400 text-xs">SAR</span></td>
+                  <td class="px-5 py-3 text-gray-600 font-medium">Jeddah → Madina</td><td class="px-5 py-3 text-right"><span class="font-bold text-navy">650</span> <span class="text-gray-400 text-xs">SAR</span></td></tr>
+                <tr class="price-row"><td class="px-5 py-3 text-gray-600 font-medium">Ziyarat Tour</td><td class="px-5 py-3 text-right"><span class="font-bold text-navy">250</span> <span class="text-gray-400 text-xs">SAR</span></td>
+                  <td class="px-5 py-3 text-gray-600 font-medium">Taif Return</td><td class="px-5 py-3 text-right"><span class="font-bold text-navy">800</span> <span class="text-gray-400 text-xs">SAR</span></td></tr>
+                <tr class="price-row"><td class="px-5 py-3 text-gray-600 font-medium">Per Hour</td><td class="px-5 py-3 text-right"><span class="font-bold text-gold">150</span> <span class="text-gray-400 text-xs">SAR</span></td><td colspan="2"></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Hyundai H1 Starex ── -->
+      <div class="fleet-card border border-gray-200 rounded-2xl overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-3">
+          <div class="bg-navy p-7 flex flex-col justify-between">
+            <div>
+              <h3 class="text-white font-extrabold text-2xl mb-1">Hyundai H1 Starex</h3>
+              <div class="flex items-center gap-1.5 text-white/50 text-sm mb-5">
+                <i data-lucide="users" class="w-4 h-4"></i> Up to 10 Passengers
+              </div>
+              <div class="space-y-2 text-white/60 text-sm">
+                <div class="flex items-center gap-2"><i data-lucide="wind" class="w-3.5 h-3.5 text-gold"></i> Air Conditioned</div>
+                <div class="flex items-center gap-2"><i data-lucide="luggage" class="w-3.5 h-3.5 text-gold"></i> 6 Large Bags</div>
+                <div class="flex items-center gap-2"><i data-lucide="wifi" class="w-3.5 h-3.5 text-gold"></i> Free WiFi</div>
+              </div>
+            </div>
+            <a href="https://wa.me/966540743000?text=Hello!%20I'd%20like%20to%20book%20a%20Hyundai%20H1%20Starex."
+               target="_blank" rel="noopener noreferrer"
+               class="mt-6 flex items-center justify-center gap-2 bg-gold hover:bg-gold-dark text-navy font-bold py-3 rounded-xl text-sm transition-colors">
+              <i data-lucide="message-circle" class="w-4 h-4"></i> Book Now
+            </a>
+          </div>
+          <div class="lg:col-span-2">
+            <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=800&q=80"
+                 alt="Hyundai H1 Starex" class="w-full h-40 object-cover lg:h-36" />
+            <table class="w-full text-sm">
+              <tbody>
+                <tr class="price-row"><td class="px-5 py-3 text-gray-600 font-medium">Jeddah → Makkah</td><td class="px-5 py-3 text-right"><span class="font-bold text-navy">300</span> <span class="text-gray-400 text-xs">SAR</span></td>
+                  <td class="px-5 py-3 text-gray-600 font-medium">Makkah → Madina</td><td class="px-5 py-3 text-right"><span class="font-bold text-navy">650</span> <span class="text-gray-400 text-xs">SAR</span></td></tr>
+                <tr class="price-row"><td class="px-5 py-3 text-gray-600 font-medium">Madina → Makkah</td><td class="px-5 py-3 text-right"><span class="font-bold text-navy">650</span> <span class="text-gray-400 text-xs">SAR</span></td>
+                  <td class="px-5 py-3 text-gray-600 font-medium">Jeddah → Madina</td><td class="px-5 py-3 text-right"><span class="font-bold text-navy">700</span> <span class="text-gray-400 text-xs">SAR</span></td></tr>
+                <tr class="price-row"><td class="px-5 py-3 text-gray-600 font-medium">Ziyarat Tour</td><td class="px-5 py-3 text-right"><span class="font-bold text-navy">300</span> <span class="text-gray-400 text-xs">SAR</span></td>
+                  <td class="px-5 py-3 text-gray-600 font-medium">Taif Return</td><td class="px-5 py-3 text-right"><span class="font-bold text-navy">900</span> <span class="text-gray-400 text-xs">SAR</span></td></tr>
+                <tr class="price-row"><td class="px-5 py-3 text-gray-600 font-medium">Per Hour</td><td class="px-5 py-3 text-right"><span class="font-bold text-gold">150</span> <span class="text-gray-400 text-xs">SAR</span></td><td colspan="2"></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Toyota Hiace ── -->
+      <div class="fleet-card border border-gray-200 rounded-2xl overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-3">
+          <div class="bg-navy p-7 flex flex-col justify-between">
+            <div>
+              <h3 class="text-white font-extrabold text-2xl mb-1">Toyota Hiace</h3>
+              <div class="flex items-center gap-1.5 text-white/50 text-sm mb-5">
+                <i data-lucide="users" class="w-4 h-4"></i> Up to 12 Passengers
+              </div>
+              <div class="space-y-2 text-white/60 text-sm">
+                <div class="flex items-center gap-2"><i data-lucide="wind" class="w-3.5 h-3.5 text-gold"></i> Air Conditioned</div>
+                <div class="flex items-center gap-2"><i data-lucide="luggage" class="w-3.5 h-3.5 text-gold"></i> 8 Large Bags</div>
+                <div class="flex items-center gap-2"><i data-lucide="wifi" class="w-3.5 h-3.5 text-gold"></i> Free WiFi</div>
+              </div>
+            </div>
+            <a href="https://wa.me/966540743000?text=Hello!%20I'd%20like%20to%20book%20a%20Toyota%20Hiace."
+               target="_blank" rel="noopener noreferrer"
+               class="mt-6 flex items-center justify-center gap-2 bg-gold hover:bg-gold-dark text-navy font-bold py-3 rounded-xl text-sm transition-colors">
+              <i data-lucide="message-circle" class="w-4 h-4"></i> Book Now
+            </a>
+          </div>
+          <div class="lg:col-span-2">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"
+                 alt="Toyota Hiace" class="w-full h-40 object-cover lg:h-36" />
+            <table class="w-full text-sm">
+              <tbody>
+                <tr class="price-row"><td class="px-5 py-3 text-gray-600 font-medium">Jeddah → Makkah</td><td class="px-5 py-3 text-right"><span class="font-bold text-navy">350</span> <span class="text-gray-400 text-xs">SAR</span></td>
+                  <td class="px-5 py-3 text-gray-600 font-medium">Makkah → Madina</td><td class="px-5 py-3 text-right"><span class="font-bold text-navy">750</span> <span class="text-gray-400 text-xs">SAR</span></td></tr>
+                <tr class="price-row"><td class="px-5 py-3 text-gray-600 font-medium">Madina → Makkah</td><td class="px-5 py-3 text-right"><span class="font-bold text-navy">750</span> <span class="text-gray-400 text-xs">SAR</span></td>
+                  <td class="px-5 py-3 text-gray-600 font-medium">Jeddah → Madina</td><td class="px-5 py-3 text-right"><span class="font-bold text-navy">800</span> <span class="text-gray-400 text-xs">SAR</span></td></tr>
+                <tr class="price-row"><td class="px-5 py-3 text-gray-600 font-medium">Ziyarat Tour</td><td class="px-5 py-3 text-right"><span class="font-bold text-navy">350</span> <span class="text-gray-400 text-xs">SAR</span></td>
+                  <td class="px-5 py-3 text-gray-600 font-medium">Taif Return</td><td class="px-5 py-3 text-right"><span class="font-bold text-navy">1,000</span> <span class="text-gray-400 text-xs">SAR</span></td></tr>
+                <tr class="price-row"><td class="px-5 py-3 text-gray-600 font-medium">Per Hour</td><td class="px-5 py-3 text-right"><span class="font-bold text-gold">200</span> <span class="text-gray-400 text-xs">SAR</span></td><td colspan="2"></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </footer>
+  </div>
+</section>
 
 
-  <!-- ═══════════════════════════════════════════
-       FLOATING WHATSAPP BUTTON
-  ═══════════════════════════════════════════ -->
-  <a href="https://wa.me/966540743000?text=Hello%20KhalfanRide!%20I'd%20like%20to%20book%20a%20transfer."
-     target="_blank" rel="noopener noreferrer"
-     class="wa-float w-14 h-14 bg-[#25D366] hover:bg-[#1ebe5d] rounded-full flex items-center justify-center shadow-xl transition-colors"
-     aria-label="Chat on WhatsApp">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="w-7 h-7">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.121 1.533 5.857L.057 23.215a.75.75 0 00.93.903l5.498-1.456A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.71 9.71 0 01-4.93-1.344l-.354-.21-3.668.971.996-3.587-.23-.37A9.712 9.712 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/>
-    </svg>
-  </a>
+<!-- ══════════════════════════════════════
+     FAQ SECTION
+══════════════════════════════════════ -->
+<section class="bg-gray-50 py-20">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="text-center mb-12">
+      <p class="text-gold font-bold text-xs uppercase tracking-widest mb-2">Got Questions?</p>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-navy">FREQUENTLY ASKED QUESTIONS</h2>
+    </div>
+
+    <div class="space-y-3" id="faq">
+
+      <div class="faq-item bg-white border border-gray-200 rounded-xl overflow-hidden">
+        <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between px-6 py-4 text-left font-semibold text-navy text-sm hover:bg-gray-50 transition-colors">
+          Do you charge extra during Ramadan or Hajj season?
+          <i data-lucide="chevron-down" class="w-4 h-4 text-gold faq-icon shrink-0 ml-3"></i>
+        </button>
+        <div class="faq-content">
+          <p class="px-6 pb-5 text-gray-500 text-sm leading-relaxed">No. Our prices are fixed year-round — no surge pricing during Ramadan, Hajj, or any peak season. The fare you see is the fare you pay.</p>
+        </div>
+      </div>
+
+      <div class="faq-item bg-white border border-gray-200 rounded-xl overflow-hidden">
+        <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between px-6 py-4 text-left font-semibold text-navy text-sm hover:bg-gray-50 transition-colors">
+          How do I pay — is prepayment required?
+          <i data-lucide="chevron-down" class="w-4 h-4 text-gold faq-icon shrink-0 ml-3"></i>
+        </button>
+        <div class="faq-content">
+          <p class="px-6 pb-5 text-gray-500 text-sm leading-relaxed">No prepayment required. You pay the fixed fare in cash directly to your driver upon arrival at your destination. No card or online payment needed.</p>
+        </div>
+      </div>
+
+      <div class="faq-item bg-white border border-gray-200 rounded-xl overflow-hidden">
+        <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between px-6 py-4 text-left font-semibold text-navy text-sm hover:bg-gray-50 transition-colors">
+          Do your drivers speak English?
+          <i data-lucide="chevron-down" class="w-4 h-4 text-gold faq-icon shrink-0 ml-3"></i>
+        </button>
+        <div class="faq-content">
+          <p class="px-6 pb-5 text-gray-500 text-sm leading-relaxed">Yes. All our drivers speak English and Urdu, making communication comfortable for international pilgrims and tourists from Pakistan, India, UK, and beyond.</p>
+        </div>
+      </div>
+
+      <div class="faq-item bg-white border border-gray-200 rounded-xl overflow-hidden">
+        <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between px-6 py-4 text-left font-semibold text-navy text-sm hover:bg-gray-50 transition-colors">
+          Can I book for a group of more than 12 people?
+          <i data-lucide="chevron-down" class="w-4 h-4 text-gold faq-icon shrink-0 ml-3"></i>
+        </button>
+        <div class="faq-content">
+          <p class="px-6 pb-5 text-gray-500 text-sm leading-relaxed">Absolutely. For larger groups we can arrange multiple vehicles or a coach. WhatsApp us with your group size and we'll provide a custom quote within minutes.</p>
+        </div>
+      </div>
+
+      <div class="faq-item bg-white border border-gray-200 rounded-xl overflow-hidden">
+        <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between px-6 py-4 text-left font-semibold text-navy text-sm hover:bg-gray-50 transition-colors">
+          How far in advance do I need to book?
+          <i data-lucide="chevron-down" class="w-4 h-4 text-gold faq-icon shrink-0 ml-3"></i>
+        </button>
+        <div class="faq-content">
+          <p class="px-6 pb-5 text-gray-500 text-sm leading-relaxed">We're available 24/7 and can often arrange same-day transfers. However, for Umrah packages and airport pickups we recommend booking at least 24 hours in advance to guarantee your preferred vehicle.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 
-  <!-- ═══════════════════════════════════════════
-       SCRIPTS
-  ═══════════════════════════════════════════ -->
-  <script>
-    // Init Lucide icons
-    lucide.createIcons();
+<!-- ══════════════════════════════════════
+     DARK CTA SECTION
+══════════════════════════════════════ -->
+<section class="bg-navy py-20">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
-    // Mobile menu toggle
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-    function closeMobileMenu() {
-      mobileMenu.classList.add('hidden');
+    <!-- Stars -->
+    <div class="flex justify-center gap-1 mb-5">
+      <span class="text-gold text-2xl">★★★★★</span>
+    </div>
+
+    <div class="flex items-center justify-center gap-3 mb-6">
+      <div class="w-10 h-10 bg-gold rounded-xl flex items-center justify-center">
+        <i data-lucide="car" class="w-5 h-5 text-navy"></i>
+      </div>
+      <span class="text-white font-black text-2xl">Khalfan<span class="text-gold">Ride</span></span>
+    </div>
+
+    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">
+      READY TO BOOK YOUR SAUDI ARABIA TAXI?
+    </h2>
+    <p class="text-white/60 text-base leading-relaxed mb-10 max-w-xl mx-auto">
+      Join 1,000+ happy pilgrims and travelers who trust KhalfanRide for safe, comfortable, and affordable transfers across the holy cities.
+    </p>
+
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="https://wa.me/966540743000?text=Hello%20KhalfanRide!%20I'd%20like%20to%20book%20a%20transfer."
+         target="_blank" rel="noopener noreferrer"
+         class="flex items-center gap-2 bg-gold hover:bg-gold-dark text-navy font-black px-10 py-4 rounded-xl text-base transition-colors shadow-xl">
+        <i data-lucide="message-circle" class="w-5 h-5"></i>
+        Book on WhatsApp Now
+      </a>
+      <a href="tel:+966540743000"
+         class="flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold px-8 py-4 rounded-xl text-sm transition-colors">
+        <i data-lucide="phone" class="w-4 h-4 text-gold"></i>
+        +966 54 074 3000
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+<footer id="contact" class="bg-[#060f18] text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+      <div>
+        <div class="flex items-center gap-2 mb-4">
+          <div class="w-9 h-9 bg-gold rounded-lg flex items-center justify-center">
+            <i data-lucide="car" class="w-5 h-5 text-navy"></i>
+          </div>
+          <span class="font-bold text-xl">Khalfan<span class="text-gold">Ride</span></span>
+        </div>
+        <p class="text-white/40 text-sm leading-relaxed max-w-xs">Premium 24/7 private transportation across the holy cities of Saudi Arabia.</p>
+        <div class="flex items-center gap-3 mt-5">
+          <a href="#" aria-label="Instagram" class="w-8 h-8 bg-white/10 hover:bg-gold hover:text-navy rounded-lg flex items-center justify-center transition-colors">
+            <i data-lucide="instagram" class="w-3.5 h-3.5"></i>
+          </a>
+          <a href="#" aria-label="Twitter" class="w-8 h-8 bg-white/10 hover:bg-gold hover:text-navy rounded-lg flex items-center justify-center transition-colors">
+            <i data-lucide="twitter" class="w-3.5 h-3.5"></i>
+          </a>
+          <a href="https://wa.me/966540743000" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
+             class="w-8 h-8 bg-white/10 hover:bg-gold hover:text-navy rounded-lg flex items-center justify-center transition-colors">
+            <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="font-bold text-sm text-gold mb-5 uppercase tracking-widest">Quick Links</h4>
+        <ul class="space-y-2.5 text-sm text-white/50">
+          <li><a href="#services" class="hover:text-gold transition-colors">Our Services</a></li>
+          <li><a href="#fleet"    class="hover:text-gold transition-colors">Fleet & Pricing</a></li>
+          <li><a href="#contact"  class="hover:text-gold transition-colors">Contact</a></li>
+          <li><a href="https://wa.me/966540743000" target="_blank" rel="noopener noreferrer" class="text-gold font-semibold hover:underline">Book on WhatsApp →</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-bold text-sm text-gold mb-5 uppercase tracking-widest">Contact</h4>
+        <ul class="space-y-3 text-sm text-white/50">
+          <li class="flex items-center gap-2">
+            <i data-lucide="message-circle" class="w-4 h-4 text-gold shrink-0"></i>
+            <a href="https://wa.me/966540743000" target="_blank" rel="noopener noreferrer" class="hover:text-gold transition-colors">+966 54 074 3000</a>
+          </li>
+          <li class="flex items-center gap-2">
+            <i data-lucide="mail" class="w-4 h-4 text-gold shrink-0"></i>
+            <a href="mailto:info@khalfanride.com" class="hover:text-gold transition-colors">info@khalfanride.com</a>
+          </li>
+          <li class="flex items-center gap-2">
+            <i data-lucide="map-pin" class="w-4 h-4 text-gold shrink-0"></i>
+            Jeddah · Makkah · Madinah, KSA
+          </li>
+          <li class="flex items-center gap-2">
+            <i data-lucide="clock" class="w-4 h-4 text-gold shrink-0"></i>
+            Available 24/7
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+  <div class="border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-white/25 text-xs">
+      <span>© 2025 KhalfanRide. All rights reserved.</span>
+      <span>Premium Transportation · Saudi Arabia</span>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ══════════════════════════════════════
+     FLOATING WHATSAPP BUTTON
+══════════════════════════════════════ -->
+<a href="https://wa.me/966540743000?text=Hello%20KhalfanRide!%20I'd%20like%20to%20book%20a%20transfer."
+   target="_blank" rel="noopener noreferrer"
+   class="wa-float w-14 h-14 bg-[#25D366] hover:bg-[#1ebe5d] rounded-full flex items-center justify-center shadow-xl transition-colors"
+   aria-label="Chat on WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="w-7 h-7">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.121 1.533 5.857L.057 23.215a.75.75 0 00.93.903l5.498-1.456A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.71 9.71 0 01-4.93-1.344l-.354-.21-3.668.971.996-3.587-.23-.37A9.712 9.712 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/>
+  </svg>
+</a>
+
+
+<script>
+  lucide.createIcons();
+
+  // Mobile menu
+  document.getElementById('menu-btn').addEventListener('click', () => {
+    document.getElementById('mobile-menu').classList.toggle('hidden');
+  });
+  function closeMobileMenu() {
+    document.getElementById('mobile-menu').classList.add('hidden');
+  }
+
+  // FAQ accordion
+  function toggleFaq(btn) {
+    const content = btn.nextElementSibling;
+    const icon = btn.querySelector('.faq-icon');
+    const isOpen = content.classList.contains('open');
+
+    // Close all
+    document.querySelectorAll('.faq-content').forEach(c => c.classList.remove('open'));
+    document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('open'));
+
+    // Open clicked if it was closed
+    if (!isOpen) {
+      content.classList.add('open');
+      icon.classList.add('open');
     }
-
-    // Shrink header on scroll
-    const header = document.getElementById('header');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        header.classList.add('shadow-xl');
-      } else {
-        header.classList.remove('shadow-xl');
-      }
-    });
-  </script>
+  }
+</script>
 
 </body>
 </html>
