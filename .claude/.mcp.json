@@ -1,0 +1,6 @@
+{
+  "mcpServers": {
+    "// example": "Add project-specific MCP servers here. E.g. a CMS API server or database inspector.",
+    "// docs": "https://docs.anthropic.com/en/docs/claude-code/mcp"
+  }
+}
