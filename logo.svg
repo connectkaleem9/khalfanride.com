@@ -1,231 +1,163 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 560">
-  <rect width="500" height="560" fill="white"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
 
-  <!-- ═══════════════════════════════════════
-       NAVY R — stem + bowl + leg
-  ═══════════════════════════════════════ -->
-
+  <!-- ── NAVY R ── -->
   <!-- Left vertical stem -->
-  <rect x="68" y="78" width="65" height="408" rx="6" fill="#0A1D2E"/>
+  <rect x="60" y="60" width="72" height="230" rx="5" fill="#0A1D2E"/>
+  <!-- Bowl top bar -->
+  <path d="M60 60 L200 60 C310 60 340 85 340 155 C340 210 310 235 220 242 L132 245 Z" fill="#0A1D2E"/>
+  <!-- Bowl inner cutout -->
+  <path d="M132 95 L195 95 C275 95 295 115 295 155 C295 193 272 208 195 210 L132 210 Z" fill="white"/>
+  <!-- Diagonal leg -->
+  <polygon points="132,242 265,242 370,390 240,390" fill="#0A1D2E"/>
 
-  <!-- Bowl filled (navy D-shape) -->
-  <path d="M 133 78
-           L 270 78
-           C 395 78 415 100 415 190
-           C 415 278 385 295 270 295
-           L 133 295 Z"
-        fill="#0A1D2E"/>
-
-  <!-- Bowl inner white cutout (road + skyline sit inside here) -->
-  <path d="M 155 108
-           L 248 108
-           C 340 108 358 128 358 190
-           C 358 250 335 262 248 262
-           L 155 262 Z"
-        fill="white"/>
-
-  <!-- Diagonal leg of R -->
-  <polygon points="170,295 300,295 432,486 300,486" fill="#0A1D2E"/>
-
-  <!-- ═══════════════════════════════════════
-       GOLD ROAD ARCH
-       — thick outer arc sweeping top-right,
-         forming the outer curve of R's bowl
-  ═══════════════════════════════════════ -->
-
-  <!-- Outer thick gold arch (the sweeping road edge) -->
-  <path d="M 133 78
-           L 270 78
-           C 415 78 448 106 448 190
-           C 448 272 408 308 270 308
-           L 155 308
-           L 155 262
-           L 248 262
-           C 335 262 358 250 358 190
-           C 358 128 340 108 248 108
-           L 133 108 Z"
+  <!-- ── GOLD ROAD SWEEP ── -->
+  <!-- Thick saffron road curves up-right through the R bowl -->
+  <path d="M60 60
+           L200 60
+           C330 60 375 90 375 155
+           C375 220 335 255 210 258
+           L132 258
+           L132 210
+           L195 210
+           C272 208 295 193 295 155
+           C295 115 275 95 195 95
+           L132 95 Z"
         fill="#EBA815"/>
 
-  <!-- Road surface (light tan — inside the gold arch band) -->
-  <path d="M 160 112
-           L 245 112
-           C 328 112 345 130 345 190
-           C 345 248 326 256 245 256
-           L 160 256
-           L 160 300
-           L 252 300
-           C 370 300 395 270 395 190
-           C 395 110 362 88 270 88
-           L 160 88 Z"
-        fill="#F0B429" opacity="0.3"/>
+  <!-- Road surface (slightly lighter inner band) -->
+  <path d="M132 95 L192 95 C268 95 288 113 288 155 C288 196 267 207 192 207 L132 207
+           L132 252 L208 252 C320 252 348 218 348 155 C348 88 310 72 200 72 L132 72 Z"
+        fill="#F5C518" opacity="0.35"/>
 
-  <!-- Perspective road band continuing DOWN from bowl through center of R -->
-  <!-- Left edge of road (going down) -->
-  <polygon points="155,262 155,486 218,486 218,268" fill="#EBA815"/>
-  <!-- Right edge strip -->
-  <polygon points="248,262 302,486 330,486 290,262" fill="#EBA815"/>
-  <!-- Road center surface (slightly lighter) -->
-  <polygon points="165,265 165,480 285,480 278,265" fill="#D4920A" opacity="0.4"/>
+  <!-- Road dashes inside gold band -->
+  <line x1="164" y1="103" x2="164" y2="122" stroke="white" stroke-width="4" stroke-linecap="round"/>
+  <line x1="165" y1="132" x2="165" y2="151" stroke="white" stroke-width="4" stroke-linecap="round"/>
+  <line x1="166" y1="161" x2="166" y2="180" stroke="white" stroke-width="4" stroke-linecap="round"/>
+  <line x1="167" y1="190" x2="167" y2="207" stroke="white" stroke-width="4" stroke-linecap="round"/>
 
-  <!-- Center road dashes (white dashed line) -->
-  <line x1="222" y1="272" x2="222" y2="296" stroke="white" stroke-width="5" stroke-linecap="round"/>
-  <line x1="224" y1="308" x2="224" y2="332" stroke="white" stroke-width="5" stroke-linecap="round"/>
-  <line x1="226" y1="344" x2="226" y2="368" stroke="white" stroke-width="5" stroke-linecap="round"/>
-  <line x1="229" y1="380" x2="229" y2="404" stroke="white" stroke-width="5" stroke-linecap="round"/>
-  <line x1="232" y1="418" x2="232" y2="442" stroke="white" stroke-width="5" stroke-linecap="round"/>
-  <line x1="236" y1="456" x2="236" y2="478" stroke="white" stroke-width="5" stroke-linecap="round"/>
+  <!-- Road continues down the diagonal leg -->
+  <polygon points="132,210 132,258 170,258 170,215" fill="#EBA815"/>
+  <line x1="151" y1="218" x2="151" y2="235" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <line x1="152" y1="244" x2="152" y2="258" stroke="white" stroke-width="3" stroke-linecap="round"/>
 
-  <!-- ═══════════════════════════════════════
-       SAUDI SKYLINE
-       — inside the R bowl, above the road
-  ═══════════════════════════════════════ -->
+  <!-- ── SAUDI SKYLINE (inside bowl, navy) ── -->
+  <!-- Ground line -->
+  <rect x="140" y="178" width="135" height="2" fill="#0A1D2E"/>
 
-  <!-- Ground base -->
-  <rect x="163" y="218" width="180" height="3" fill="#0A1D2E"/>
+  <!-- Left small buildings -->
+  <rect x="143" y="170" width="6"  height="10" fill="#0A1D2E"/>
+  <rect x="151" y="163" width="8"  height="17" fill="#0A1D2E"/>
 
-  <!-- Small left buildings -->
-  <rect x="166" y="208" width="7"  height="13" fill="#0A1D2E"/>
-  <rect x="175" y="201" width="9"  height="20" fill="#0A1D2E"/>
-  <rect x="186" y="208" width="6"  height="13" fill="#0A1D2E"/>
+  <!-- Kingdom Centre — twin pillars + arch gap + top bar -->
+  <rect x="162" y="123" width="8"  height="57" fill="#0A1D2E"/>
+  <rect x="180" y="123" width="8"  height="57" fill="#0A1D2E"/>
+  <rect x="162" y="123" width="26" height="7"  fill="#0A1D2E"/>
+  <rect x="162" y="155" width="26" height="25" fill="#0A1D2E"/>
+  <!-- arch gap 130-155 is naturally white -->
 
-  <!-- Kingdom Centre Tower (tallest — distinctive arch opening) -->
-  <!-- Left pillar -->
-  <rect x="195" y="158" width="9"  height="63" fill="#0A1D2E"/>
-  <!-- Right pillar -->
-  <rect x="214" y="158" width="9"  height="63" fill="#0A1D2E"/>
-  <!-- Top cap bar -->
-  <rect x="195" y="158" width="28" height="7" fill="#0A1D2E"/>
-  <!-- Lower slab (below arch opening) -->
-  <rect x="195" y="188" width="28" height="33" fill="#0A1D2E"/>
-  <!-- The gap between pillars (y=165 to y=188) = the arch opening, naturally white -->
+  <!-- Burj Rafal — slim spire -->
+  <rect x="192" y="133" width="6"  height="47" fill="#0A1D2E"/>
+  <polygon points="192,133 198,133 195,120" fill="#0A1D2E"/>
 
-  <!-- Slim tower with disc (Al Faisaliyah style) -->
-  <rect x="227" y="170" width="7"  height="51" fill="#0A1D2E"/>
-  <ellipse cx="230.5" cy="167" rx="8" ry="5" fill="#0A1D2E"/>
-  <rect    x="228"   y="162" width="5" height="7" fill="#0A1D2E"/>
-
-  <!-- Dome mosque -->
-  <rect x="238" y="197" width="20" height="24" fill="#0A1D2E"/>
-  <path d="M 238 197 Q 248 183 258 197 Z" fill="#0A1D2E"/>
-  <!-- Minaret -->
-  <rect x="260" y="188" width="5" height="33" fill="#0A1D2E"/>
-  <rect x="258" y="186" width="9" height="4"  fill="#0A1D2E"/>
+  <!-- Mosque dome + minaret -->
+  <rect x="202" y="158" width="18" height="22" fill="#0A1D2E"/>
+  <path d="M202 158 Q211 145 220 158 Z" fill="#0A1D2E"/>
+  <rect x="222" y="151" width="5"  height="29" fill="#0A1D2E"/>
 
   <!-- Pointed tower -->
-  <rect    x="268" y="178" width="8" height="43" fill="#0A1D2E"/>
-  <polygon points="268,178 276,178 272,168"      fill="#0A1D2E"/>
+  <rect x="230" y="143" width="7"  height="37" fill="#0A1D2E"/>
+  <polygon points="230,143 237,143 233.5,133" fill="#0A1D2E"/>
 
   <!-- Palm tree -->
-  <rect x="280" y="200" width="5" height="21" fill="#0A1D2E"/>
-  <path d="M 282 200 C 272 190, 264 192, 264 196 C 268 194, 276 196, 282 200" fill="#0A1D2E"/>
-  <path d="M 282 200 C 278 188, 273 186, 272 190 C 274 188, 278 192, 282 200" fill="#0A1D2E"/>
-  <path d="M 282 200 C 290 188, 295 190, 295 194 C 292 192, 287 194, 282 200" fill="#0A1D2E"/>
-  <path d="M 282 200 C 294 196, 296 200, 294 203 C 291 200, 287 199, 282 200" fill="#0A1D2E"/>
+  <rect x="241" y="160" width="4" height="20" fill="#0A1D2E"/>
+  <path d="M243 160 C235 152,228 154,228 158 C231 156,238 158,243 160" fill="#0A1D2E"/>
+  <path d="M243 160 C251 151,256 153,256 157 C253 155,248 157,243 160" fill="#0A1D2E"/>
 
-  <!-- Right edge buildings -->
-  <rect x="295" y="196" width="8"  height="25" fill="#0A1D2E"/>
-  <rect x="305" y="202" width="7"  height="19" fill="#0A1D2E"/>
-  <rect x="314" y="207" width="9"  height="14" fill="#0A1D2E"/>
-  <rect x="325" y="204" width="7"  height="17" fill="#0A1D2E"/>
-  <rect x="334" y="209" width="8"  height="12" fill="#0A1D2E"/>
+  <!-- Right buildings -->
+  <rect x="249" y="162" width="7"  height="18" fill="#0A1D2E"/>
+  <rect x="258" y="167" width="6"  height="13" fill="#0A1D2E"/>
+  <rect x="266" y="170" width="7"  height="10" fill="#0A1D2E"/>
 
-  <!-- ═══════════════════════════════════════
-       TAXI CAR — front 3/4 view, navy with gold sign
-  ═══════════════════════════════════════ -->
+  <!-- ── TAXI CAR (foreground, larger, front 3/4) ── -->
+  <!-- Speed lines left -->
+  <line x1="20"  y1="330" x2="68"  y2="330" stroke="#EBA815" stroke-width="5" stroke-linecap="round"/>
+  <line x1="10"  y1="345" x2="66"  y2="345" stroke="#EBA815" stroke-width="3" stroke-linecap="round"/>
+  <line x1="20"  y1="359" x2="68"  y2="359" stroke="#EBA815" stroke-width="2" stroke-linecap="round"/>
 
-  <!-- Speed motion lines (left) -->
-  <line x1="42"  y1="430" x2="90"  y2="430" stroke="#EBA815" stroke-width="5" stroke-linecap="round"/>
-  <line x1="30"  y1="447" x2="88"  y2="447" stroke="#EBA815" stroke-width="3.5" stroke-linecap="round"/>
-  <line x1="42"  y1="463" x2="90"  y2="463" stroke="#EBA815" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Speed lines right -->
+  <line x1="348" y1="330" x2="396" y2="330" stroke="#EBA815" stroke-width="5" stroke-linecap="round"/>
+  <line x1="350" y1="345" x2="400" y2="345" stroke="#EBA815" stroke-width="3" stroke-linecap="round"/>
+  <line x1="348" y1="359" x2="394" y2="359" stroke="#EBA815" stroke-width="2" stroke-linecap="round"/>
 
-  <!-- Speed motion lines (right) -->
-  <line x1="390" y1="430" x2="440" y2="430" stroke="#EBA815" stroke-width="5" stroke-linecap="round"/>
-  <line x1="392" y1="447" x2="445" y2="447" stroke="#EBA815" stroke-width="3.5" stroke-linecap="round"/>
-  <line x1="390" y1="463" x2="438" y2="463" stroke="#EBA815" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Car body cabin -->
+  <path d="M75 345 L98 303 L318 303 L342 345 Z" fill="#0A1D2E"/>
+  <!-- Car lower chassis -->
+  <rect x="68" y="343" width="278" height="32" rx="5" fill="#0A1D2E"/>
 
-  <!-- Car roofline/cabin -->
-  <path d="M 112 450 L 135 408 L 362 408 L 385 450 Z" fill="#0A1D2E"/>
-
-  <!-- Car lower body/chassis -->
-  <rect x="105" y="448" width="290" height="35" rx="6" fill="#0A1D2E"/>
-
-  <!-- Side windows (dark blue highlight) -->
-  <path d="M 136 448 L 153 412 L 240 412 L 240 448 Z" fill="#1e3a5f"/>
-  <path d="M 252 412 L 358 412 L 372 448 L 252 448 Z" fill="#1e3a5f"/>
-  <!-- Centre pillar -->
-  <rect x="238" y="410" width="8" height="40" fill="#0A1D2E"/>
-
-  <!-- Front grille / bumper detail -->
-  <rect x="113" y="462" width="72" height="8" rx="2" fill="#EBA815"/>
-  <rect x="193" y="462" width="30" height="8" rx="2" fill="#0A1D2E"/>
-  <rect x="228" y="462" width="72" height="8" rx="2" fill="#EBA815"/>
-  <rect x="305" y="462" width="80" height="8" rx="2" fill="#EBA815"/>
+  <!-- Windows -->
+  <path d="M100 343 L117 308 L205 308 L205 343 Z" fill="#1A3355"/>
+  <path d="M215 308 L312 308 L328 343 L215 343 Z" fill="#1A3355"/>
+  <rect x="203" y="306" width="8" height="38" fill="#0A1D2E"/>
 
   <!-- Headlights -->
-  <rect x="107" y="452" width="28" height="14" rx="4" fill="#EBA815"/>
-  <rect x="364" y="452" width="28" height="14" rx="4" fill="#EBA815"/>
+  <rect x="70"  y="347" width="26" height="12" rx="4" fill="#EBA815"/>
+  <rect x="318" y="347" width="26" height="12" rx="4" fill="#EBA815"/>
 
-  <!-- Front wheel -->
-  <ellipse cx="168" cy="483" rx="35" ry="17" fill="#0A1D2E"/>
-  <ellipse cx="168" cy="483" rx="22" ry="11" fill="#2a2a3e"/>
-  <ellipse cx="168" cy="483" rx="10" ry="5"  fill="#0A1D2E"/>
-  <!-- Rear wheel -->
-  <ellipse cx="328" cy="483" rx="35" ry="17" fill="#0A1D2E"/>
-  <ellipse cx="328" cy="483" rx="22" ry="11" fill="#2a2a3e"/>
-  <ellipse cx="328" cy="483" rx="10" ry="5"  fill="#0A1D2E"/>
+  <!-- Bumper stripe -->
+  <rect x="100" y="358" width="62" height="7" rx="2" fill="#EBA815"/>
+  <rect x="252" y="358" width="62" height="7" rx="2" fill="#EBA815"/>
 
-  <!-- TAXI checker sign on roof -->
-  <rect x="182" y="400" width="136" height="20" rx="4" fill="#EBA815"/>
-  <!-- Checker squares -->
-  <rect x="186" y="404" width="10" height="10" fill="#0A1D2E"/>
-  <rect x="206" y="404" width="10" height="10" fill="#0A1D2E"/>
-  <rect x="226" y="404" width="10" height="10" fill="#0A1D2E"/>
-  <rect x="246" y="404" width="10" height="10" fill="#0A1D2E"/>
-  <rect x="266" y="404" width="10" height="10" fill="#0A1D2E"/>
-  <rect x="286" y="404" width="10" height="10" fill="#0A1D2E"/>
-  <rect x="306" y="404" width="10" height="10" fill="#0A1D2E"/>
+  <!-- Wheels -->
+  <ellipse cx="138" cy="375" rx="33" ry="16" fill="#0A1D2E"/>
+  <ellipse cx="138" cy="375" rx="21" ry="10" fill="#2a2a3e"/>
+  <ellipse cx="138" cy="375" rx="9"  ry="4.5" fill="#0A1D2E"/>
 
-  <!-- ═══════════════════════════════════════
-       TEXT BLOCK
-  ═══════════════════════════════════════ -->
+  <ellipse cx="278" cy="375" rx="33" ry="16" fill="#0A1D2E"/>
+  <ellipse cx="278" cy="375" rx="21" ry="10" fill="#2a2a3e"/>
+  <ellipse cx="278" cy="375" rx="9"  ry="4.5" fill="#0A1D2E"/>
 
-  <!-- "KhalfanRide" — bold italic, navy + gold -->
-  <text y="522"
-        font-family="'Arial Black', 'Franklin Gothic Heavy', Impact, sans-serif"
+  <!-- TAXI roof sign -->
+  <rect x="155" y="294" width="106" height="17" rx="4" fill="#EBA815"/>
+  <rect x="159" y="297" width="9"  height="9" fill="#0A1D2E"/>
+  <rect x="175" y="297" width="9"  height="9" fill="#0A1D2E"/>
+  <rect x="191" y="297" width="9"  height="9" fill="#0A1D2E"/>
+  <rect x="207" y="297" width="9"  height="9" fill="#0A1D2E"/>
+  <rect x="223" y="297" width="9"  height="9" fill="#0A1D2E"/>
+  <rect x="239" y="297" width="9"  height="9" fill="#0A1D2E"/>
+
+  <!-- ── TEXT BLOCK ── -->
+  <!-- KhalfanRide -->
+  <text y="420"
+        font-family="'Montserrat','Arial Black',Impact,sans-serif"
         font-weight="900"
         font-style="italic"
-        font-size="56"
+        font-size="62"
         letter-spacing="-1">
-    <tspan x="62" fill="#0A1D2E">Khalfan</tspan><tspan fill="#EBA815">Ride</tspan>
+    <tspan x="45" fill="#0A1D2E">Khalfan</tspan><tspan fill="#EBA815">Ride</tspan>
   </text>
 
-  <!-- Tagline with flanking gold lines -->
-  <line x1="62"  y1="534" x2="140" y2="534" stroke="#EBA815" stroke-width="1.5"/>
-  <text x="250"  y="538"
-        font-family="Georgia, 'Times New Roman', serif"
+  <!-- Gold lines flanking tagline -->
+  <line x1="45"  y1="433" x2="130" y2="433" stroke="#EBA815" stroke-width="1.5"/>
+  <text x="255" y="437"
+        font-family="Georgia,'Times New Roman',serif"
         font-style="italic"
-        font-size="14.5"
+        font-size="15"
         fill="#0A1D2E"
         text-anchor="middle"
-        letter-spacing="0.3">Your Journey, Our Priority</text>
-  <line x1="360" y1="534" x2="438" y2="534" stroke="#EBA815" stroke-width="1.5"/>
+        letter-spacing="0.5">Your Journey, Our Priority</text>
+  <line x1="375" y1="433" x2="460" y2="433" stroke="#EBA815" stroke-width="1.5"/>
 
   <!-- Location pin -->
-  <path d="M 250 545
-           C 250 542, 246 538, 246 534
-           C 246 530, 248 528, 250 528
-           C 252 528, 254 530, 254 534
-           C 254 538, 250 542, 250 545 Z"
-        fill="#EBA815"/>
-  <circle cx="250" cy="534" r="2.5" fill="white"/>
+  <path d="M255 447 C255 444,251 440,251 436 C251 432,253 430,255 430 C257 430,259 432,259 436 C259 440,255 447,255 447 Z" fill="#EBA815"/>
+  <circle cx="255" cy="436" r="2.5" fill="white"/>
 
   <!-- SAUDI ARABIA -->
-  <text x="250" y="557"
-        font-family="Arial, Helvetica, sans-serif"
+  <text x="255" y="465"
+        font-family="Arial,Helvetica,sans-serif"
         font-weight="700"
         font-size="13"
         fill="#0A1D2E"
         text-anchor="middle"
-        letter-spacing="5">SAUDI ARABIA</text>
+        letter-spacing="6">SAUDI ARABIA</text>
 
 </svg>
