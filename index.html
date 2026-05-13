@@ -624,141 +624,305 @@
 
     </div>
 
-    <!-- ── BOTTOM ROW: 2 Detailed Route Pricing Cards ── -->
+    <!-- ── ROUTE PRICING: Individual cards, 2 per row ── -->
+    <div class="mt-4 mb-3">
+      <p class="sec-tag mb-1">Route Pricing</p>
+      <h3 class="text-navy font-extrabold text-lg">FIXED FARES — ALL ROUTES</h3>
+    </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-      <!-- Card: Camry & Staria pricing -->
-      <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden flex">
-
-        <!-- LEFT: OUR ROUTES + City Names -->
-        <div class="w-44 shrink-0 bg-gray-50 flex flex-col border-r border-gray-100">
-          <!-- Heading — same height as vehicle image header -->
-          <div class="flex flex-col items-center justify-center gap-1.5 px-3 border-b border-gray-100 bg-navy h-[136px]">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M3 14h18M5 6l2-2m10 0l2 2M5 18l2 2m10 0l2-2"/>
-            </svg>
-            <span class="text-white font-extrabold text-xs uppercase tracking-widest text-center">Our Routes</span>
-          </div>
-          <!-- City names aligned with fare rows -->
-          <div class="divide-y divide-gray-100 flex-1">
-            <div class="flex items-center gap-1.5 px-3 py-3 h-[46px]"><i data-lucide="car" class="w-3.5 h-3.5 text-navy shrink-0"></i><span class="text-navy text-xs font-semibold">Jeddah → Makkah</span></div>
-            <div class="flex items-center gap-1.5 px-3 py-3 h-[46px]"><i data-lucide="car" class="w-3.5 h-3.5 text-navy shrink-0"></i><span class="text-navy text-xs font-semibold">Makkah → Madina</span></div>
-            <div class="flex items-center gap-1.5 px-3 py-3 h-[46px]"><i data-lucide="car" class="w-3.5 h-3.5 text-navy shrink-0"></i><span class="text-navy text-xs font-semibold">Madina → Makkah</span></div>
-            <div class="flex items-center gap-1.5 px-3 py-3 h-[46px]"><i data-lucide="car" class="w-3.5 h-3.5 text-navy shrink-0"></i><span class="text-navy text-xs font-semibold">Jeddah → Madina</span></div>
-            <div class="flex items-center gap-1.5 px-3 py-3 h-[46px]"><i data-lucide="car" class="w-3.5 h-3.5 text-navy shrink-0"></i><span class="text-navy text-xs font-semibold">Ziyarat Tour</span></div>
-          </div>
-          <div class="px-3 py-2"><p class="text-gray-400 text-xs italic">SAR · On arrival</p></div>
-        </div>
-
-        <!-- RIGHT: Vehicles + Fares -->
-        <div class="flex-1">
-          <!-- Vehicle headers — fixed height to match routes heading -->
-          <div class="grid grid-cols-2 border-b border-gray-100 h-[136px]">
-            <div class="flex flex-col items-center justify-center gap-1 p-3 border-r border-gray-100">
-              <img src="https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=400&q=90"
-                   alt="Camry" class="w-full h-16 object-cover rounded-lg" />
-              <p class="font-extrabold text-navy text-xs text-center">Toyota Camry</p>
-              <p class="text-gray-400 text-[10px] text-center">4 Passengers</p>
-            </div>
-            <div class="flex flex-col items-center justify-center gap-1 p-3">
-              <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=400&q=90"
-                   alt="Staria" class="w-full h-16 object-cover rounded-lg" />
-              <p class="font-extrabold text-navy text-xs text-center">Hyundai Staria</p>
-              <p class="text-gray-400 text-[10px] text-center">7 Passengers</p>
-            </div>
-          </div>
-          <!-- Fares -->
-          <div class="divide-y divide-gray-100">
-            <div class="grid grid-cols-2 divide-x divide-gray-100">
-              <div class="py-3 text-center"><span class="text-gold font-black text-sm">SAR 250</span></div>
-              <div class="py-3 text-center"><span class="text-gold font-black text-sm">SAR 300</span></div>
-            </div>
-            <div class="grid grid-cols-2 divide-x divide-gray-100">
-              <div class="py-3 text-center"><span class="text-gold font-black text-sm">SAR 450</span></div>
-              <div class="py-3 text-center"><span class="text-gold font-black text-sm">SAR 600</span></div>
-            </div>
-            <div class="grid grid-cols-2 divide-x divide-gray-100">
-              <div class="py-3 text-center"><span class="text-gold font-black text-sm">SAR 450</span></div>
-              <div class="py-3 text-center"><span class="text-gold font-black text-sm">SAR 600</span></div>
-            </div>
-            <div class="grid grid-cols-2 divide-x divide-gray-100">
-              <div class="py-3 text-center"><span class="text-gold font-black text-sm">SAR 500</span></div>
-              <div class="py-3 text-center"><span class="text-gold font-black text-sm">SAR 650</span></div>
-            </div>
-            <div class="grid grid-cols-2 divide-x divide-gray-100">
-              <div class="py-3 text-center"><span class="text-gold font-black text-sm">SAR 200</span></div>
-              <div class="py-3 text-center"><span class="text-gold font-black text-sm">SAR 250</span></div>
-            </div>
+      <!-- ── Toyota Camry ── -->
+      <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden">
+        <div class="flex items-center gap-3 p-4 bg-navy">
+          <img src="https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=300&q=85"
+               alt="Toyota Camry" class="w-16 h-12 object-cover rounded-lg shrink-0" />
+          <div>
+            <p class="text-white font-extrabold text-sm">Toyota Camry</p>
+            <p class="text-white/50 text-xs">4 Passengers · Sedan</p>
           </div>
         </div>
-
+        <div class="divide-y divide-gray-100">
+          <div class="flex items-center justify-between px-4 py-2.5">
+            <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Jeddah Airport → Makkah</span>
+            <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 250</span>
+          </div>
+          <div class="flex items-center justify-between px-4 py-2.5">
+            <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Makkah → Madinah</span>
+            <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 450</span>
+          </div>
+          <div class="flex items-center justify-between px-4 py-2.5">
+            <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Madinah → Makkah</span>
+            <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 450</span>
+          </div>
+          <div class="flex items-center justify-between px-4 py-2.5">
+            <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Jeddah → Madinah</span>
+            <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 500</span>
+          </div>
+          <div class="flex items-center justify-between px-4 py-2.5">
+            <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Ziyarat Tour</span>
+            <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 200</span>
+          </div>
+        </div>
+        <div class="p-3">
+          <a href="https://wa.me/966540743000?text=Hello%20KhalfanRide!%20I%20want%20to%20book%20Toyota%20Camry." target="_blank" rel="noopener noreferrer"
+             class="block w-full text-center bg-gold hover:bg-gold-dark text-navy font-black text-xs py-2.5 rounded-xl transition-colors">Book Now</a>
+        </div>
       </div>
 
-      <!-- Card: Hiace & H1 Starex pricing -->
-      <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden flex">
-
-        <!-- LEFT: OUR ROUTES + City Names -->
-        <div class="w-44 shrink-0 bg-gray-50 flex flex-col border-r border-gray-100">
-          <!-- Heading — same height as vehicle image header -->
-          <div class="flex flex-col items-center justify-center gap-1.5 px-3 border-b border-gray-100 bg-navy h-[136px]">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M3 14h18M5 6l2-2m10 0l2 2M5 18l2 2m10 0l2-2"/>
-            </svg>
-            <span class="text-white font-extrabold text-xs uppercase tracking-widest text-center">Our Routes</span>
+      <!-- ── Hyundai Staria ── -->
+      <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden">
+        <div class="flex items-center gap-3 p-4 bg-navy">
+          <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=300&q=85"
+               alt="Hyundai Staria" class="w-16 h-12 object-cover rounded-lg shrink-0" />
+          <div>
+            <p class="text-white font-extrabold text-sm">Hyundai Staria</p>
+            <p class="text-white/50 text-xs">7 Passengers · MPV</p>
           </div>
-          <!-- City names -->
-          <div class="divide-y divide-gray-100 flex-1">
-            <div class="flex items-center gap-1.5 px-3 py-3 h-[46px]"><i data-lucide="car" class="w-3.5 h-3.5 text-navy shrink-0"></i><span class="text-navy text-xs font-semibold">Jeddah → Makkah</span></div>
-            <div class="flex items-center gap-1.5 px-3 py-3 h-[46px]"><i data-lucide="car" class="w-3.5 h-3.5 text-navy shrink-0"></i><span class="text-navy text-xs font-semibold">Makkah → Madina</span></div>
-            <div class="flex items-center gap-1.5 px-3 py-3 h-[46px]"><i data-lucide="car" class="w-3.5 h-3.5 text-navy shrink-0"></i><span class="text-navy text-xs font-semibold">Madina → Makkah</span></div>
-            <div class="flex items-center gap-1.5 px-3 py-3 h-[46px]"><i data-lucide="car" class="w-3.5 h-3.5 text-navy shrink-0"></i><span class="text-navy text-xs font-semibold">Jeddah → Madina</span></div>
-            <div class="flex items-center gap-1.5 px-3 py-3 h-[46px]"><i data-lucide="car" class="w-3.5 h-3.5 text-navy shrink-0"></i><span class="text-navy text-xs font-semibold">Ziyarat Tour</span></div>
-          </div>
-          <div class="px-3 py-2"><p class="text-gray-400 text-xs italic">SAR · On arrival</p></div>
         </div>
-
-        <!-- RIGHT: Vehicles + Fares -->
-        <div class="flex-1">
-          <!-- Vehicle headers — fixed height to match routes heading -->
-          <div class="grid grid-cols-2 border-b border-gray-100 h-[136px]">
-            <div class="flex flex-col items-center justify-center gap-1 p-3 border-r border-gray-100">
-              <img src="https://images.unsplash.com/photo-1678747172256-b37b7ac99cfc?w=400&q=90"
-                   alt="Hiace" class="w-full h-16 object-cover rounded-lg" />
-              <p class="font-extrabold text-navy text-xs text-center">Toyota Hiace</p>
-              <p class="text-gray-400 text-[10px] text-center">12 Passengers</p>
-            </div>
-            <div class="flex flex-col items-center justify-center gap-1 p-3">
-              <img src="https://images.unsplash.com/photo-1746985094087-e703bf52c71b?w=400&q=90"
-                   alt="H1 Starex" class="w-full h-16 object-cover rounded-lg" />
-              <p class="font-extrabold text-navy text-xs text-center">H1 Starex</p>
-              <p class="text-gray-400 text-[10px] text-center">10 Passengers</p>
-            </div>
+        <div class="divide-y divide-gray-100">
+          <div class="flex items-center justify-between px-4 py-2.5">
+            <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Jeddah Airport → Makkah</span>
+            <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 300</span>
           </div>
-          <!-- Fares -->
+          <div class="flex items-center justify-between px-4 py-2.5">
+            <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Makkah → Madinah</span>
+            <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 600</span>
+          </div>
+          <div class="flex items-center justify-between px-4 py-2.5">
+            <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Madinah → Makkah</span>
+            <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 600</span>
+          </div>
+          <div class="flex items-center justify-between px-4 py-2.5">
+            <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Jeddah → Madinah</span>
+            <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 650</span>
+          </div>
+          <div class="flex items-center justify-between px-4 py-2.5">
+            <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Ziyarat Tour</span>
+            <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 250</span>
+          </div>
+        </div>
+        <div class="p-3">
+          <a href="https://wa.me/966540743000?text=Hello%20KhalfanRide!%20I%20want%20to%20book%20Hyundai%20Staria." target="_blank" rel="noopener noreferrer"
+             class="block w-full text-center bg-gold hover:bg-gold-dark text-navy font-black text-xs py-2.5 rounded-xl transition-colors">Book Now</a>
+        </div>
+      </div>
+
+      <!-- ── Toyota Hiace ── -->
+      <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden">
+        <div class="flex items-center gap-3 p-4 bg-navy">
+          <img src="https://images.unsplash.com/photo-1678747172256-b37b7ac99cfc?w=300&q=85"
+               alt="Toyota Hiace" class="w-16 h-12 object-cover rounded-lg shrink-0" />
+          <div>
+            <p class="text-white font-extrabold text-sm">Toyota Hiace</p>
+            <p class="text-white/50 text-xs">12 Passengers · Van</p>
+          </div>
+        </div>
+        <div class="divide-y divide-gray-100">
+          <div class="flex items-center justify-between px-4 py-2.5">
+            <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Jeddah Airport → Makkah</span>
+            <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 350</span>
+          </div>
+          <div class="flex items-center justify-between px-4 py-2.5">
+            <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Makkah → Madinah</span>
+            <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 750</span>
+          </div>
+          <div class="flex items-center justify-between px-4 py-2.5">
+            <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Madinah → Makkah</span>
+            <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 750</span>
+          </div>
+          <div class="flex items-center justify-between px-4 py-2.5">
+            <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Jeddah → Madinah</span>
+            <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 800</span>
+          </div>
+          <div class="flex items-center justify-between px-4 py-2.5">
+            <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Ziyarat Tour</span>
+            <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 350</span>
+          </div>
+        </div>
+        <div class="p-3">
+          <a href="https://wa.me/966540743000?text=Hello%20KhalfanRide!%20I%20want%20to%20book%20Toyota%20Hiace." target="_blank" rel="noopener noreferrer"
+             class="block w-full text-center bg-gold hover:bg-gold-dark text-navy font-black text-xs py-2.5 rounded-xl transition-colors">Book Now</a>
+        </div>
+      </div>
+
+      <!-- ── Hyundai H1 Starex ── -->
+      <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden">
+        <div class="flex items-center gap-3 p-4 bg-navy">
+          <img src="https://images.unsplash.com/photo-1746985094087-e703bf52c71b?w=300&q=85"
+               alt="H1 Starex" class="w-16 h-12 object-cover rounded-lg shrink-0" />
+          <div>
+            <p class="text-white font-extrabold text-sm">Hyundai H1 Starex</p>
+            <p class="text-white/50 text-xs">10 Passengers · Van</p>
+          </div>
+        </div>
+        <div class="divide-y divide-gray-100">
+          <div class="flex items-center justify-between px-4 py-2.5">
+            <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Jeddah Airport → Makkah</span>
+            <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 300</span>
+          </div>
+          <div class="flex items-center justify-between px-4 py-2.5">
+            <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Makkah → Madinah</span>
+            <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 650</span>
+          </div>
+          <div class="flex items-center justify-between px-4 py-2.5">
+            <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Madinah → Makkah</span>
+            <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 650</span>
+          </div>
+          <div class="flex items-center justify-between px-4 py-2.5">
+            <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Jeddah → Madinah</span>
+            <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 700</span>
+          </div>
+          <div class="flex items-center justify-between px-4 py-2.5">
+            <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Ziyarat Tour</span>
+            <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 300</span>
+          </div>
+        </div>
+        <div class="p-3">
+          <a href="https://wa.me/966540743000?text=Hello%20KhalfanRide!%20I%20want%20to%20book%20Hyundai%20H1%20Starex." target="_blank" rel="noopener noreferrer"
+             class="block w-full text-center bg-gold hover:bg-gold-dark text-navy font-black text-xs py-2.5 rounded-xl transition-colors">Book Now</a>
+        </div>
+      </div>
+
+      <!-- ── GMC Yukon XL ── -->
+      <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden">
+        <div class="flex items-center gap-3 p-4 bg-navy">
+          <img src="https://images.unsplash.com/photo-1758222397861-bee524c38fb7?w=300&q=85"
+               alt="GMC Yukon XL" class="w-16 h-12 object-cover rounded-lg shrink-0" />
+          <div>
+            <p class="text-white font-extrabold text-sm">GMC Yukon XL</p>
+            <p class="text-white/50 text-xs">7 Passengers · VIP SUV</p>
+          </div>
+        </div>
+        <div class="divide-y divide-gray-100">
+          <div class="flex items-center justify-between px-4 py-2.5">
+            <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Jeddah Airport → Makkah</span>
+            <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 350</span>
+          </div>
+          <div class="flex items-center justify-between px-4 py-2.5">
+            <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Makkah → Madinah</span>
+            <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 750</span>
+          </div>
+          <div class="flex items-center justify-between px-4 py-2.5">
+            <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Madinah → Makkah</span>
+            <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 750</span>
+          </div>
+          <div class="flex items-center justify-between px-4 py-2.5">
+            <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Jeddah → Madinah</span>
+            <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 800</span>
+          </div>
+          <div class="flex items-center justify-between px-4 py-2.5">
+            <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Ziyarat Tour</span>
+            <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 350</span>
+          </div>
+          <div class="flex items-center justify-between px-4 py-2.5">
+            <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Taif Return</span>
+            <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 1,100</span>
+          </div>
+          <div class="flex items-center justify-between px-4 py-2.5">
+            <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="clock" class="w-3 h-3 text-gold shrink-0"></i>Per Hour Hire</span>
+            <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 200/hr</span>
+          </div>
+        </div>
+        <div class="p-3">
+          <a href="https://wa.me/966540743000?text=Hello%20KhalfanRide!%20I%20want%20to%20book%20GMC%20Yukon%20XL." target="_blank" rel="noopener noreferrer"
+             class="block w-full text-center bg-gold hover:bg-gold-dark text-navy font-black text-xs py-2.5 rounded-xl transition-colors">Book Now</a>
+        </div>
+      </div>
+
+      <!-- ── Toyota Coaster ── -->
+      <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden">
+        <div class="flex items-center gap-3 p-4 bg-navy">
+          <img src="https://images.unsplash.com/photo-1642325017820-d081feea1969?w=300&q=85"
+               alt="Toyota Coaster" class="w-16 h-12 object-cover rounded-lg shrink-0" />
+          <div>
+            <p class="text-white font-extrabold text-sm">Toyota Coaster</p>
+            <p class="text-white/50 text-xs">16+ Passengers · Minibus</p>
+          </div>
+        </div>
+        <div class="divide-y divide-gray-100">
+          <div class="flex items-center justify-between px-4 py-2.5">
+            <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Jeddah Airport → Makkah</span>
+            <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 600</span>
+          </div>
+          <div class="flex items-center justify-between px-4 py-2.5">
+            <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Makkah → Madinah</span>
+            <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 1,200</span>
+          </div>
+          <div class="flex items-center justify-between px-4 py-2.5">
+            <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Madinah → Makkah</span>
+            <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 1,200</span>
+          </div>
+          <div class="flex items-center justify-between px-4 py-2.5">
+            <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Jeddah → Madinah</span>
+            <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 1,300</span>
+          </div>
+          <div class="flex items-center justify-between px-4 py-2.5">
+            <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Ziyarat Tour</span>
+            <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 600</span>
+          </div>
+          <div class="flex items-center justify-between px-4 py-2.5">
+            <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Taif Return</span>
+            <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 1,800</span>
+          </div>
+          <div class="flex items-center justify-between px-4 py-2.5">
+            <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="clock" class="w-3 h-3 text-gold shrink-0"></i>Per Hour Hire</span>
+            <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 300/hr</span>
+          </div>
+        </div>
+        <div class="p-3">
+          <a href="https://wa.me/966540743000?text=Hello%20KhalfanRide!%20I%20want%20to%20book%20Toyota%20Coaster." target="_blank" rel="noopener noreferrer"
+             class="block w-full text-center bg-gold hover:bg-gold-dark text-navy font-black text-xs py-2.5 rounded-xl transition-colors">Book Now</a>
+        </div>
+      </div>
+
+      <!-- ── Bus 50-Seater ── -->
+      <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden md:col-span-2">
+        <div class="flex items-center gap-3 p-4 bg-navy">
+          <img src="https://images.unsplash.com/photo-1546347930-c3a16cd9ff0a?w=300&q=85"
+               alt="Bus 50-Seater" class="w-16 h-12 object-cover rounded-lg shrink-0" />
+          <div>
+            <p class="text-white font-extrabold text-sm">Bus 50-Seater</p>
+            <p class="text-white/50 text-xs">50 Passengers · Coach</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-gray-100">
           <div class="divide-y divide-gray-100">
-            <div class="grid grid-cols-2 divide-x divide-gray-100">
-              <div class="py-3 text-center"><span class="text-gold font-black text-sm">SAR 350</span></div>
-              <div class="py-3 text-center"><span class="text-gold font-black text-sm">SAR 300</span></div>
+            <div class="flex items-center justify-between px-4 py-2.5">
+              <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Jeddah Airport → Makkah</span>
+              <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 1,500</span>
             </div>
-            <div class="grid grid-cols-2 divide-x divide-gray-100">
-              <div class="py-3 text-center"><span class="text-gold font-black text-sm">SAR 750</span></div>
-              <div class="py-3 text-center"><span class="text-gold font-black text-sm">SAR 650</span></div>
+            <div class="flex items-center justify-between px-4 py-2.5">
+              <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Makkah → Madinah</span>
+              <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 3,000</span>
             </div>
-            <div class="grid grid-cols-2 divide-x divide-gray-100">
-              <div class="py-3 text-center"><span class="text-gold font-black text-sm">SAR 750</span></div>
-              <div class="py-3 text-center"><span class="text-gold font-black text-sm">SAR 650</span></div>
+            <div class="flex items-center justify-between px-4 py-2.5">
+              <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Madinah → Makkah</span>
+              <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 3,000</span>
             </div>
-            <div class="grid grid-cols-2 divide-x divide-gray-100">
-              <div class="py-3 text-center"><span class="text-gold font-black text-sm">SAR 800</span></div>
-              <div class="py-3 text-center"><span class="text-gold font-black text-sm">SAR 700</span></div>
+          </div>
+          <div class="divide-y divide-gray-100">
+            <div class="flex items-center justify-between px-4 py-2.5">
+              <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Jeddah → Madinah</span>
+              <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 3,200</span>
             </div>
-            <div class="grid grid-cols-2 divide-x divide-gray-100">
-              <div class="py-3 text-center"><span class="text-gold font-black text-sm">SAR 350</span></div>
-              <div class="py-3 text-center"><span class="text-gold font-black text-sm">SAR 300</span></div>
+            <div class="flex items-center justify-between px-4 py-2.5">
+              <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Ziyarat Tour</span>
+              <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 1,500</span>
+            </div>
+            <div class="flex items-center justify-between px-4 py-2.5">
+              <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Taif Return</span>
+              <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 4,500</span>
+            </div>
+            <div class="flex items-center justify-between px-4 py-2.5">
+              <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="clock" class="w-3 h-3 text-gold shrink-0"></i>Per Hour Hire</span>
+              <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 600/hr</span>
             </div>
           </div>
         </div>
-
+        <div class="p-3">
+          <a href="https://wa.me/966540743000?text=Hello%20KhalfanRide!%20I%20want%20to%20book%20a%2050-Seater%20Bus." target="_blank" rel="noopener noreferrer"
+             class="block w-full text-center bg-gold hover:bg-gold-dark text-navy font-black text-xs py-2.5 rounded-xl transition-colors">Book Now</a>
+        </div>
       </div>
 
     </div>
