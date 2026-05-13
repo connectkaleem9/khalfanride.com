@@ -580,10 +580,10 @@
           </div>
         </div>
 
-        <!-- Column headings with OUR ROUTES on right -->
-        <div class="flex items-center justify-between px-5 pt-4 pb-2">
-          <span class="invisible text-xs">Route</span>
-          <div class="flex items-center gap-2">
+        <!-- Header row: OUR ROUTES on right -->
+        <div class="grid grid-cols-3 items-center px-5 pt-4 pb-1">
+          <div></div>
+          <div class="col-span-2 flex items-center justify-end gap-1.5">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A2 2 0 013 15.382V5a2 2 0 012-2h14a2 2 0 012 2v10.382a2 2 0 01-1.553 1.894L14 20m-5 0v-4m0 4h5m0 0v-4"/>
             </svg>
@@ -591,57 +591,39 @@
           </div>
         </div>
 
+        <!-- Vehicle column headings -->
+        <div class="grid grid-cols-3 px-5 pb-2">
+          <div></div>
+          <div class="text-center"><span class="text-navy font-extrabold text-xs uppercase tracking-wide">Toyota Camry</span></div>
+          <div class="text-center"><span class="text-navy font-extrabold text-xs uppercase tracking-wide">Hyundai Staria</span></div>
+        </div>
+
         <!-- Route rows -->
         <div class="divide-y divide-gray-100 px-5">
-          <div class="flex items-center justify-between py-3">
-            <div class="flex items-center gap-2">
-              <i data-lucide="car" class="w-4 h-4 text-navy shrink-0"></i>
-              <span class="text-navy text-sm font-medium">Jeddah → Makkah</span>
-            </div>
-            <div class="flex gap-6 text-right">
-              <span class="text-gold font-black text-sm">SAR 250</span>
-              <span class="text-gold font-black text-sm">SAR 300</span>
-            </div>
+          <div class="grid grid-cols-3 items-center py-3">
+            <div class="flex items-center gap-2"><i data-lucide="car" class="w-4 h-4 text-navy shrink-0"></i><span class="text-navy text-sm font-medium">Jeddah → Makkah</span></div>
+            <div class="text-center"><span class="text-gold font-black text-sm">SAR 250</span></div>
+            <div class="text-center"><span class="text-gold font-black text-sm">SAR 300</span></div>
           </div>
-          <div class="flex items-center justify-between py-3">
-            <div class="flex items-center gap-2">
-              <i data-lucide="car" class="w-4 h-4 text-navy shrink-0"></i>
-              <span class="text-navy text-sm font-medium">Makkah → Madina</span>
-            </div>
-            <div class="flex gap-6 text-right">
-              <span class="text-gold font-black text-sm">SAR 450</span>
-              <span class="text-gold font-black text-sm">SAR 600</span>
-            </div>
+          <div class="grid grid-cols-3 items-center py-3">
+            <div class="flex items-center gap-2"><i data-lucide="car" class="w-4 h-4 text-navy shrink-0"></i><span class="text-navy text-sm font-medium">Makkah → Madina</span></div>
+            <div class="text-center"><span class="text-gold font-black text-sm">SAR 450</span></div>
+            <div class="text-center"><span class="text-gold font-black text-sm">SAR 600</span></div>
           </div>
-          <div class="flex items-center justify-between py-3">
-            <div class="flex items-center gap-2">
-              <i data-lucide="car" class="w-4 h-4 text-navy shrink-0"></i>
-              <span class="text-navy text-sm font-medium">Madina → Makkah</span>
-            </div>
-            <div class="flex gap-6 text-right">
-              <span class="text-gold font-black text-sm">SAR 450</span>
-              <span class="text-gold font-black text-sm">SAR 600</span>
-            </div>
+          <div class="grid grid-cols-3 items-center py-3">
+            <div class="flex items-center gap-2"><i data-lucide="car" class="w-4 h-4 text-navy shrink-0"></i><span class="text-navy text-sm font-medium">Madina → Makkah</span></div>
+            <div class="text-center"><span class="text-gold font-black text-sm">SAR 450</span></div>
+            <div class="text-center"><span class="text-gold font-black text-sm">SAR 600</span></div>
           </div>
-          <div class="flex items-center justify-between py-3">
-            <div class="flex items-center gap-2">
-              <i data-lucide="car" class="w-4 h-4 text-navy shrink-0"></i>
-              <span class="text-navy text-sm font-medium">Jeddah → Madina</span>
-            </div>
-            <div class="flex gap-6 text-right">
-              <span class="text-gold font-black text-sm">SAR 500</span>
-              <span class="text-gold font-black text-sm">SAR 650</span>
-            </div>
+          <div class="grid grid-cols-3 items-center py-3">
+            <div class="flex items-center gap-2"><i data-lucide="car" class="w-4 h-4 text-navy shrink-0"></i><span class="text-navy text-sm font-medium">Jeddah → Madina</span></div>
+            <div class="text-center"><span class="text-gold font-black text-sm">SAR 500</span></div>
+            <div class="text-center"><span class="text-gold font-black text-sm">SAR 650</span></div>
           </div>
-          <div class="flex items-center justify-between py-3">
-            <div class="flex items-center gap-2">
-              <i data-lucide="car" class="w-4 h-4 text-navy shrink-0"></i>
-              <span class="text-navy text-sm font-medium">Ziyarat Tour</span>
-            </div>
-            <div class="flex gap-6 text-right">
-              <span class="text-gold font-black text-sm">SAR 200</span>
-              <span class="text-gold font-black text-sm">SAR 250</span>
-            </div>
+          <div class="grid grid-cols-3 items-center py-3">
+            <div class="flex items-center gap-2"><i data-lucide="car" class="w-4 h-4 text-navy shrink-0"></i><span class="text-navy text-sm font-medium">Ziyarat Tour</span></div>
+            <div class="text-center"><span class="text-gold font-black text-sm">SAR 200</span></div>
+            <div class="text-center"><span class="text-gold font-black text-sm">SAR 250</span></div>
           </div>
         </div>
         <div class="px-5 pb-5 pt-3">
@@ -665,74 +647,50 @@
           </div>
         </div>
 
-        <!-- OUR ROUTES heading -->
-        <div class="flex items-center justify-center gap-2 pt-4 pb-2 px-5">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A2 2 0 013 15.382V5a2 2 0 012-2h14a2 2 0 012 2v10.382a2 2 0 01-1.553 1.894L14 20m-5 0v-4m0 4h5m0 0v-4"/>
-          </svg>
-          <span class="text-navy font-extrabold text-xs uppercase tracking-widest">Our Routes</span>
+        <!-- Header row: OUR ROUTES on right -->
+        <div class="grid grid-cols-3 items-center px-5 pt-4 pb-1">
+          <div></div>
+          <div class="col-span-2 flex items-center justify-end gap-1.5">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A2 2 0 013 15.382V5a2 2 0 012-2h14a2 2 0 012 2v10.382a2 2 0 01-1.553 1.894L14 20m-5 0v-4m0 4h5m0 0v-4"/>
+            </svg>
+            <span class="text-navy font-extrabold text-xs uppercase tracking-widest">Our Routes</span>
+          </div>
         </div>
 
-        <!-- Column headings -->
-        <div class="flex items-center justify-between px-5 pb-1">
-          <span class="invisible text-xs">Route</span>
-          <div class="flex gap-6">
-            <span class="text-navy font-extrabold text-xs uppercase tracking-wide">Toyota Hiace</span>
-            <span class="text-navy font-extrabold text-xs uppercase tracking-wide">H1 Starex</span>
-          </div>
+        <!-- Vehicle column headings -->
+        <div class="grid grid-cols-3 px-5 pb-2">
+          <div></div>
+          <div class="text-center"><span class="text-navy font-extrabold text-xs uppercase tracking-wide">Toyota Hiace</span></div>
+          <div class="text-center"><span class="text-navy font-extrabold text-xs uppercase tracking-wide">H1 Starex</span></div>
         </div>
 
         <!-- Route rows -->
         <div class="divide-y divide-gray-100 px-5">
-          <div class="flex items-center justify-between py-3">
-            <div class="flex items-center gap-2">
-              <i data-lucide="car" class="w-4 h-4 text-navy shrink-0"></i>
-              <span class="text-navy text-sm font-medium">Jeddah → Makkah</span>
-            </div>
-            <div class="flex gap-6 text-right">
-              <span class="text-gold font-black text-sm">SAR 350</span>
-              <span class="text-gold font-black text-sm">SAR 300</span>
-            </div>
+          <div class="grid grid-cols-3 items-center py-3">
+            <div class="flex items-center gap-2"><i data-lucide="car" class="w-4 h-4 text-navy shrink-0"></i><span class="text-navy text-sm font-medium">Jeddah → Makkah</span></div>
+            <div class="text-center"><span class="text-gold font-black text-sm">SAR 350</span></div>
+            <div class="text-center"><span class="text-gold font-black text-sm">SAR 300</span></div>
           </div>
-          <div class="flex items-center justify-between py-3">
-            <div class="flex items-center gap-2">
-              <i data-lucide="car" class="w-4 h-4 text-navy shrink-0"></i>
-              <span class="text-navy text-sm font-medium">Makkah → Madina</span>
-            </div>
-            <div class="flex gap-6 text-right">
-              <span class="text-gold font-black text-sm">SAR 750</span>
-              <span class="text-gold font-black text-sm">SAR 650</span>
-            </div>
+          <div class="grid grid-cols-3 items-center py-3">
+            <div class="flex items-center gap-2"><i data-lucide="car" class="w-4 h-4 text-navy shrink-0"></i><span class="text-navy text-sm font-medium">Makkah → Madina</span></div>
+            <div class="text-center"><span class="text-gold font-black text-sm">SAR 750</span></div>
+            <div class="text-center"><span class="text-gold font-black text-sm">SAR 650</span></div>
           </div>
-          <div class="flex items-center justify-between py-3">
-            <div class="flex items-center gap-2">
-              <i data-lucide="car" class="w-4 h-4 text-navy shrink-0"></i>
-              <span class="text-navy text-sm font-medium">Madina → Makkah</span>
-            </div>
-            <div class="flex gap-6 text-right">
-              <span class="text-gold font-black text-sm">SAR 750</span>
-              <span class="text-gold font-black text-sm">SAR 650</span>
-            </div>
+          <div class="grid grid-cols-3 items-center py-3">
+            <div class="flex items-center gap-2"><i data-lucide="car" class="w-4 h-4 text-navy shrink-0"></i><span class="text-navy text-sm font-medium">Madina → Makkah</span></div>
+            <div class="text-center"><span class="text-gold font-black text-sm">SAR 750</span></div>
+            <div class="text-center"><span class="text-gold font-black text-sm">SAR 650</span></div>
           </div>
-          <div class="flex items-center justify-between py-3">
-            <div class="flex items-center gap-2">
-              <i data-lucide="car" class="w-4 h-4 text-navy shrink-0"></i>
-              <span class="text-navy text-sm font-medium">Jeddah → Madina</span>
-            </div>
-            <div class="flex gap-6 text-right">
-              <span class="text-gold font-black text-sm">SAR 800</span>
-              <span class="text-gold font-black text-sm">SAR 700</span>
-            </div>
+          <div class="grid grid-cols-3 items-center py-3">
+            <div class="flex items-center gap-2"><i data-lucide="car" class="w-4 h-4 text-navy shrink-0"></i><span class="text-navy text-sm font-medium">Jeddah → Madina</span></div>
+            <div class="text-center"><span class="text-gold font-black text-sm">SAR 800</span></div>
+            <div class="text-center"><span class="text-gold font-black text-sm">SAR 700</span></div>
           </div>
-          <div class="flex items-center justify-between py-3">
-            <div class="flex items-center gap-2">
-              <i data-lucide="car" class="w-4 h-4 text-navy shrink-0"></i>
-              <span class="text-navy text-sm font-medium">Ziyarat Tour</span>
-            </div>
-            <div class="flex gap-6 text-right">
-              <span class="text-gold font-black text-sm">SAR 350</span>
-              <span class="text-gold font-black text-sm">SAR 300</span>
-            </div>
+          <div class="grid grid-cols-3 items-center py-3">
+            <div class="flex items-center gap-2"><i data-lucide="car" class="w-4 h-4 text-navy shrink-0"></i><span class="text-navy text-sm font-medium">Ziyarat Tour</span></div>
+            <div class="text-center"><span class="text-gold font-black text-sm">SAR 350</span></div>
+            <div class="text-center"><span class="text-gold font-black text-sm">SAR 300</span></div>
           </div>
         </div>
         <div class="px-5 pb-5 pt-3">
