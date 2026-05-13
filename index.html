@@ -567,8 +567,28 @@
       <!-- Card: Camry & Staria pricing -->
       <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden flex">
 
-        <!-- LEFT: Vehicles + Fares -->
-        <div class="flex-1 border-r border-gray-100">
+        <!-- LEFT: OUR ROUTES + City Names -->
+        <div class="w-44 shrink-0 bg-gray-50 flex flex-col border-r border-gray-100">
+          <!-- Heading -->
+          <div class="flex items-center justify-center gap-1.5 px-3 py-4 border-b border-gray-100 bg-navy">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M3 14h18M5 6l2-2m10 0l2 2M5 18l2 2m10 0l2-2"/>
+            </svg>
+            <span class="text-white font-extrabold text-xs uppercase tracking-wide">Our Routes</span>
+          </div>
+          <!-- City names aligned with fare rows -->
+          <div class="divide-y divide-gray-100 flex-1">
+            <div class="flex items-center gap-1.5 px-3 py-3 h-[46px]"><i data-lucide="car" class="w-3.5 h-3.5 text-navy shrink-0"></i><span class="text-navy text-xs font-semibold">Jeddah → Makkah</span></div>
+            <div class="flex items-center gap-1.5 px-3 py-3 h-[46px]"><i data-lucide="car" class="w-3.5 h-3.5 text-navy shrink-0"></i><span class="text-navy text-xs font-semibold">Makkah → Madina</span></div>
+            <div class="flex items-center gap-1.5 px-3 py-3 h-[46px]"><i data-lucide="car" class="w-3.5 h-3.5 text-navy shrink-0"></i><span class="text-navy text-xs font-semibold">Madina → Makkah</span></div>
+            <div class="flex items-center gap-1.5 px-3 py-3 h-[46px]"><i data-lucide="car" class="w-3.5 h-3.5 text-navy shrink-0"></i><span class="text-navy text-xs font-semibold">Jeddah → Madina</span></div>
+            <div class="flex items-center gap-1.5 px-3 py-3 h-[46px]"><i data-lucide="car" class="w-3.5 h-3.5 text-navy shrink-0"></i><span class="text-navy text-xs font-semibold">Ziyarat Tour</span></div>
+          </div>
+          <div class="px-3 py-2"><p class="text-gray-400 text-xs italic">SAR · On arrival</p></div>
+        </div>
+
+        <!-- RIGHT: Vehicles + Fares -->
+        <div class="flex-1">
           <!-- Vehicle headers -->
           <div class="grid grid-cols-2 border-b border-gray-100">
             <div class="flex flex-col items-center gap-1.5 p-3 border-r border-gray-100">
@@ -607,8 +627,13 @@
           </div>
         </div>
 
-        <!-- RIGHT: OUR ROUTES + City Names -->
-        <div class="w-44 shrink-0 bg-gray-50 flex flex-col">
+      </div>
+
+      <!-- Card: Hiace & H1 Starex pricing -->
+      <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden flex">
+
+        <!-- LEFT: OUR ROUTES + City Names -->
+        <div class="w-44 shrink-0 bg-gray-50 flex flex-col border-r border-gray-100">
           <!-- Heading -->
           <div class="flex items-center justify-center gap-1.5 px-3 py-4 border-b border-gray-100 bg-navy">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -616,7 +641,7 @@
             </svg>
             <span class="text-white font-extrabold text-xs uppercase tracking-wide">Our Routes</span>
           </div>
-          <!-- City names aligned with fare rows -->
+          <!-- City names -->
           <div class="divide-y divide-gray-100 flex-1">
             <div class="flex items-center gap-1.5 px-3 py-3 h-[46px]"><i data-lucide="car" class="w-3.5 h-3.5 text-navy shrink-0"></i><span class="text-navy text-xs font-semibold">Jeddah → Makkah</span></div>
             <div class="flex items-center gap-1.5 px-3 py-3 h-[46px]"><i data-lucide="car" class="w-3.5 h-3.5 text-navy shrink-0"></i><span class="text-navy text-xs font-semibold">Makkah → Madina</span></div>
@@ -627,13 +652,8 @@
           <div class="px-3 py-2"><p class="text-gray-400 text-xs italic">SAR · On arrival</p></div>
         </div>
 
-      </div>
-
-      <!-- Card: Hiace & H1 Starex pricing -->
-      <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden flex">
-
-        <!-- LEFT: Vehicles + Fares -->
-        <div class="flex-1 border-r border-gray-100">
+        <!-- RIGHT: Vehicles + Fares -->
+        <div class="flex-1">
           <!-- Vehicle headers -->
           <div class="grid grid-cols-2 border-b border-gray-100">
             <div class="flex flex-col items-center gap-1.5 p-3 border-r border-gray-100">
@@ -670,26 +690,6 @@
               <div class="py-3 text-center"><span class="text-gold font-black text-sm">SAR 300</span></div>
             </div>
           </div>
-        </div>
-
-        <!-- RIGHT: OUR ROUTES + City Names -->
-        <div class="w-44 shrink-0 bg-gray-50 flex flex-col">
-          <!-- Heading -->
-          <div class="flex items-center justify-center gap-1.5 px-3 py-4 border-b border-gray-100 bg-navy">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M3 14h18M5 6l2-2m10 0l2 2M5 18l2 2m10 0l2-2"/>
-            </svg>
-            <span class="text-white font-extrabold text-xs uppercase tracking-wide">Our Routes</span>
-          </div>
-          <!-- City names -->
-          <div class="divide-y divide-gray-100 flex-1">
-            <div class="flex items-center gap-1.5 px-3 py-3 h-[46px]"><i data-lucide="car" class="w-3.5 h-3.5 text-navy shrink-0"></i><span class="text-navy text-xs font-semibold">Jeddah → Makkah</span></div>
-            <div class="flex items-center gap-1.5 px-3 py-3 h-[46px]"><i data-lucide="car" class="w-3.5 h-3.5 text-navy shrink-0"></i><span class="text-navy text-xs font-semibold">Makkah → Madina</span></div>
-            <div class="flex items-center gap-1.5 px-3 py-3 h-[46px]"><i data-lucide="car" class="w-3.5 h-3.5 text-navy shrink-0"></i><span class="text-navy text-xs font-semibold">Madina → Makkah</span></div>
-            <div class="flex items-center gap-1.5 px-3 py-3 h-[46px]"><i data-lucide="car" class="w-3.5 h-3.5 text-navy shrink-0"></i><span class="text-navy text-xs font-semibold">Jeddah → Madina</span></div>
-            <div class="flex items-center gap-1.5 px-3 py-3 h-[46px]"><i data-lucide="car" class="w-3.5 h-3.5 text-navy shrink-0"></i><span class="text-navy text-xs font-semibold">Ziyarat Tour</span></div>
-          </div>
-          <div class="px-3 py-2"><p class="text-gray-400 text-xs italic">SAR · On arrival</p></div>
         </div>
 
       </div>
