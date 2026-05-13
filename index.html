@@ -154,7 +154,7 @@
 <!-- ════════════════════════════════════════
      HEADER
 ════════════════════════════════════════ -->
-<header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-100 shadow-sm">
+<header class="sticky top-0 z-50 border-b border-white/10 shadow-sm" style="background-color:#0B1E33;">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-14">
 
     <!-- Logo -->
@@ -163,7 +163,7 @@
     </a>
 
     <!-- Nav -->
-    <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-gray-600">
+    <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-white/80">
       <a href="#services" class="hover:text-navy transition-colors">Services</a>
       <a href="#fleet"    class="hover:text-navy transition-colors">Fleet</a>
       <a href="#pricing"  class="hover:text-navy transition-colors">Pricing</a>
@@ -177,14 +177,14 @@
          class="hidden sm:inline-flex items-center gap-1.5 bg-gold hover:bg-gold-dark text-navy font-bold text-xs px-4 py-2.5 rounded-lg transition-colors">
         <i data-lucide="message-circle" class="w-3.5 h-3.5"></i> Book on WhatsApp
       </a>
-      <button id="menu-btn" class="md:hidden text-navy">
+      <button id="menu-btn" class="md:hidden text-white">
         <i data-lucide="menu" class="w-5 h-5"></i>
       </button>
     </div>
   </div>
   <!-- Mobile nav -->
-  <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 px-4 pb-3">
-    <div class="flex flex-col gap-2 pt-2 text-sm font-medium text-gray-600">
+  <div id="mobile-menu" class="hidden md:hidden border-t border-white/10 px-4 pb-3" style="background-color:#0B1E33;">
+    <div class="flex flex-col gap-2 pt-2 text-sm font-medium text-white/80">
       <a href="#services" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="py-1.5">Services</a>
       <a href="#fleet"    onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="py-1.5">Fleet</a>
       <a href="#pricing"  onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="py-1.5">Pricing</a>
@@ -394,10 +394,10 @@
 ════════════════════════════════════════ -->
 <section id="fleet" class="bg-gray-50 py-14">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 lg:grid-cols-5 gap-10">
+    <div class="grid grid-cols-1 gap-10">
 
       <!-- ── LEFT: VIP FLEET OPTIONS ── (3/5 width) -->
-      <div class="lg:col-span-3">
+      <div>
         <p class="sec-tag mb-1">Choose Your Vehicle</p>
         <h2 class="sec-h2 mb-6">VIP TAXI FLEET OPTIONS</h2>
 
@@ -526,132 +526,207 @@
       </div>
 
 
-      <!-- ── RIGHT: Steps + Trust + FAQ ── (2/5 width) -->
-      <div class="lg:col-span-2 flex flex-col gap-8">
+    </div>
+  </div>
+</section>
 
-        <!-- 3 Easy Steps -->
-        <div class="bg-white rounded-xl border border-gray-200 p-6">
-          <p class="sec-tag mb-1">Simple Process</p>
-          <h2 class="sec-h2 text-base mb-5">BOOK YOUR RIDE IN 3 EASY STEPS</h2>
 
-          <div class="space-y-5">
-            <div class="flex gap-4">
-              <div class="flex flex-col items-center">
-                <div class="w-8 h-8 bg-gold rounded-full flex items-center justify-center text-navy font-black text-sm shrink-0">1</div>
-                <div class="w-px flex-1 bg-gold/20 mt-1"></div>
-              </div>
-              <div class="pb-4">
-                <h3 class="font-bold text-sm text-navy mb-1">Select Route & Vehicle</h3>
-                <p class="text-gray-500 text-xs leading-relaxed">Pick your destination and vehicle from the table.</p>
-              </div>
-            </div>
-            <div class="flex gap-4">
-              <div class="flex flex-col items-center">
-                <div class="w-8 h-8 bg-gold rounded-full flex items-center justify-center text-navy font-black text-sm shrink-0">2</div>
-                <div class="w-px flex-1 bg-gold/20 mt-1"></div>
-              </div>
-              <div class="pb-4">
-                <h3 class="font-bold text-sm text-navy mb-1">Confirm on WhatsApp</h3>
-                <p class="text-gray-500 text-xs leading-relaxed">Send us your trip details and get instant confirmation.</p>
-              </div>
-            </div>
-            <div class="flex gap-4">
-              <div class="w-8 h-8 bg-gold rounded-full flex items-center justify-center text-navy font-black text-sm shrink-0">3</div>
-              <div>
-                <h3 class="font-bold text-sm text-navy mb-1">Pay on Arrival</h3>
-                <p class="text-gray-500 text-xs leading-relaxed">Cash to driver. No prepayment. Zero hidden fees.</p>
-              </div>
-            </div>
-          </div>
+<!-- ════════════════════════════════════════
+     SIMPLE PROCESS
+════════════════════════════════════════ -->
+<section class="bg-white py-16">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <p class="sec-tag mb-1">Simple Process</p>
+    <h2 class="sec-h2 mb-12">BOOK YOUR RIDE IN 3 EASY STEPS</h2>
 
-          <a href="https://wa.me/966540743000?text=Hello%20KhalfanRide!%20I%20want%20to%20book." target="_blank" rel="noopener noreferrer"
-             class="mt-5 flex items-center justify-center gap-2 bg-gold hover:bg-gold-dark text-navy font-bold text-xs py-3 rounded-lg transition-colors">
-            <i data-lucide="message-circle" class="w-3.5 h-3.5"></i> Book on WhatsApp
-          </a>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+
+      <!-- Connector line (desktop) -->
+      <div class="hidden md:block absolute top-10 left-1/4 right-1/4 h-0.5 bg-gold/25 -z-0"></div>
+
+      <!-- Step 1 -->
+      <div class="flex flex-col items-center text-center relative z-10">
+        <div class="w-20 h-20 bg-gold rounded-full flex items-center justify-center mb-5 shadow-lg">
+          <i data-lucide="map-pin" class="w-9 h-9 text-navy"></i>
         </div>
-
-        <!-- Trusted by 1000+ Pilgrims -->
-        <div class="bg-white rounded-xl border border-gray-200 p-6">
-          <p class="sec-tag mb-1">Reviews</p>
-          <h2 class="sec-h2 text-base mb-4">TRUSTED BY 1000+ PILGRIMS</h2>
-
-          <div class="grid grid-cols-2 gap-3 mb-4">
-            <div class="bg-gold/10 rounded-lg p-3 text-center">
-              <div class="text-gold font-black text-xl">1,000+</div>
-              <div class="text-gray-500 text-xs">Happy Pilgrims</div>
-            </div>
-            <div class="bg-gold/10 rounded-lg p-3 text-center">
-              <div class="text-gold font-black text-xl">4.9★</div>
-              <div class="text-gray-500 text-xs">Avg Rating</div>
-            </div>
-          </div>
-
-          <div class="space-y-3">
-            <div class="bg-gray-50 rounded-lg p-3 border border-gray-100">
-              <div class="text-gold text-xs mb-1">★★★★★</div>
-              <p class="text-gray-600 text-xs leading-relaxed">"Excellent service! On time, professional driver. Will use again for Umrah."</p>
-              <p class="text-navy font-semibold text-xs mt-1.5">— Ahmed K., Pakistan</p>
-            </div>
-            <div class="bg-gray-50 rounded-lg p-3 border border-gray-100">
-              <div class="text-gold text-xs mb-1">★★★★★</div>
-              <p class="text-gray-600 text-xs leading-relaxed">"Fixed price, clean car, friendly driver who spoke English. Highly recommended!"</p>
-              <p class="text-navy font-semibold text-xs mt-1.5">— Fatima R., Malaysia</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- FAQ -->
-        <div class="bg-white rounded-xl border border-gray-200 p-6">
-          <p class="sec-tag mb-1">Help</p>
-          <h2 class="sec-h2 text-base mb-4">FREQUENTLY ASKED QUESTIONS</h2>
-
-          <div class="space-y-2">
-
-            <div class="border border-gray-100 rounded-lg overflow-hidden">
-              <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between px-4 py-3 text-left text-xs font-semibold text-navy hover:bg-gray-50 transition-colors">
-                Do prices surge during Ramadan or Hajj?
-                <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-gold faq-chevron shrink-0 ml-2"></i>
-              </button>
-              <div class="faq-body">
-                <p class="px-4 pb-3 text-gray-500 text-xs leading-relaxed">No. Our prices are fixed year-round — no surge pricing ever.</p>
-              </div>
-            </div>
-
-            <div class="border border-gray-100 rounded-lg overflow-hidden">
-              <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between px-4 py-3 text-left text-xs font-semibold text-navy hover:bg-gray-50 transition-colors">
-                Is prepayment required?
-                <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-gold faq-chevron shrink-0 ml-2"></i>
-              </button>
-              <div class="faq-body">
-                <p class="px-4 pb-3 text-gray-500 text-xs leading-relaxed">No — pay cash to driver on arrival. No card or online payment needed.</p>
-              </div>
-            </div>
-
-            <div class="border border-gray-100 rounded-lg overflow-hidden">
-              <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between px-4 py-3 text-left text-xs font-semibold text-navy hover:bg-gray-50 transition-colors">
-                Do drivers speak English?
-                <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-gold faq-chevron shrink-0 ml-2"></i>
-              </button>
-              <div class="faq-body">
-                <p class="px-4 pb-3 text-gray-500 text-xs leading-relaxed">Yes — all drivers speak English and Urdu for international travelers.</p>
-              </div>
-            </div>
-
-            <div class="border border-gray-100 rounded-lg overflow-hidden">
-              <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between px-4 py-3 text-left text-xs font-semibold text-navy hover:bg-gray-50 transition-colors">
-                Can I book for a group larger than 12?
-                <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-gold faq-chevron shrink-0 ml-2"></i>
-              </button>
-              <div class="faq-body">
-                <p class="px-4 pb-3 text-gray-500 text-xs leading-relaxed">Yes — WhatsApp us with your group size for a custom multi-vehicle quote.</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
+        <div class="w-8 h-8 bg-navy text-white rounded-full flex items-center justify-center font-black text-sm -mt-4 mb-4 border-2 border-white shadow">1</div>
+        <h3 class="font-extrabold text-navy text-lg mb-2">Select Route & Vehicle</h3>
+        <p class="text-gray-500 text-sm leading-relaxed max-w-xs mx-auto">Choose your destination and pick the vehicle that fits your group size from our fleet table.</p>
       </div>
-      <!-- end right col -->
+
+      <!-- Step 2 -->
+      <div class="flex flex-col items-center text-center relative z-10">
+        <div class="w-20 h-20 bg-gold rounded-full flex items-center justify-center mb-5 shadow-lg">
+          <i data-lucide="message-circle" class="w-9 h-9 text-navy"></i>
+        </div>
+        <div class="w-8 h-8 bg-navy text-white rounded-full flex items-center justify-center font-black text-sm -mt-4 mb-4 border-2 border-white shadow">2</div>
+        <h3 class="font-extrabold text-navy text-lg mb-2">Confirm on WhatsApp</h3>
+        <p class="text-gray-500 text-sm leading-relaxed max-w-xs mx-auto">Send us your trip details on WhatsApp and get instant confirmation within minutes — 24/7.</p>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="flex flex-col items-center text-center relative z-10">
+        <div class="w-20 h-20 bg-gold rounded-full flex items-center justify-center mb-5 shadow-lg">
+          <i data-lucide="banknote" class="w-9 h-9 text-navy"></i>
+        </div>
+        <div class="w-8 h-8 bg-navy text-white rounded-full flex items-center justify-center font-black text-sm -mt-4 mb-4 border-2 border-white shadow">3</div>
+        <h3 class="font-extrabold text-navy text-lg mb-2">Pay on Arrival</h3>
+        <p class="text-gray-500 text-sm leading-relaxed max-w-xs mx-auto">Cash to driver on arrival. No prepayment, no hidden fees, no surprises.</p>
+      </div>
+
+    </div>
+
+    <a href="https://wa.me/966540743000?text=Hello%20KhalfanRide!%20I%20want%20to%20book%20a%20transfer."
+       target="_blank" rel="noopener noreferrer"
+       class="mt-12 inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-navy font-black text-sm px-10 py-4 rounded-xl shadow-lg transition-colors">
+      <i data-lucide="message-circle" class="w-4 h-4"></i> Book Now on WhatsApp
+    </a>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════
+     REVIEWS
+════════════════════════════════════════ -->
+<section class="bg-gray-50 py-16">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <p class="sec-tag mb-1">Reviews</p>
+    <h2 class="sec-h2 mb-3">TRUSTED BY 1,000+ PILGRIMS</h2>
+    <p class="text-gray-500 text-sm mb-10">Real reviews from real travelers across Saudi Arabia</p>
+
+    <!-- Stats row -->
+    <div class="flex justify-center gap-10 mb-12">
+      <div class="text-center">
+        <div class="text-gold font-black text-3xl">1,000+</div>
+        <div class="text-gray-500 text-sm mt-1">Happy Pilgrims</div>
+      </div>
+      <div class="w-px bg-gray-200"></div>
+      <div class="text-center">
+        <div class="text-gold font-black text-3xl">4.9★</div>
+        <div class="text-gray-500 text-sm mt-1">Average Rating</div>
+      </div>
+      <div class="w-px bg-gray-200"></div>
+      <div class="text-center">
+        <div class="text-gold font-black text-3xl">263+</div>
+        <div class="text-gray-500 text-sm mt-1">Verified Reviews</div>
+      </div>
+    </div>
+
+    <!-- Review cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-left">
+        <div class="text-gold text-base mb-3">★★★★★</div>
+        <p class="text-gray-700 text-sm leading-relaxed mb-4">"Excellent service! Driver was on time, car was clean, and the price was exactly as quoted. Will definitely use again for Umrah."</p>
+        <div class="flex items-center gap-3 border-t border-gray-100 pt-4">
+          <div class="w-9 h-9 bg-navy rounded-full flex items-center justify-center text-white font-bold text-sm">A</div>
+          <div>
+            <p class="font-bold text-navy text-sm">Ahmed K.</p>
+            <p class="text-gray-400 text-xs">Pakistan</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-left">
+        <div class="text-gold text-base mb-3">★★★★★</div>
+        <p class="text-gray-700 text-sm leading-relaxed mb-4">"Fixed price, spotless car, and the driver spoke English perfectly. Booking via WhatsApp was so easy. Highly recommended!"</p>
+        <div class="flex items-center gap-3 border-t border-gray-100 pt-4">
+          <div class="w-9 h-9 bg-navy rounded-full flex items-center justify-center text-white font-bold text-sm">F</div>
+          <div>
+            <p class="font-bold text-navy text-sm">Fatima R.</p>
+            <p class="text-gray-400 text-xs">Malaysia</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-left">
+        <div class="text-gold text-base mb-3">★★★★★</div>
+        <p class="text-gray-700 text-sm leading-relaxed mb-4">"We were a family of 8. KhalfanRide sent a spacious Staria — perfect. No surge pricing during Ramadan. JazakAllah Khair!"</p>
+        <div class="flex items-center gap-3 border-t border-gray-100 pt-4">
+          <div class="w-9 h-9 bg-navy rounded-full flex items-center justify-center text-white font-bold text-sm">M</div>
+          <div>
+            <p class="font-bold text-navy text-sm">Mohammed S.</p>
+            <p class="text-gray-400 text-xs">United Kingdom</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════
+     FAQs
+════════════════════════════════════════ -->
+<section id="faq" class="bg-white py-16">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-10">
+      <p class="sec-tag mb-1">Help</p>
+      <h2 class="sec-h2">FREQUENTLY ASKED QUESTIONS</h2>
+    </div>
+
+    <div class="space-y-3">
+
+      <div class="border border-gray-200 rounded-xl overflow-hidden">
+        <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between px-5 py-4 text-left font-semibold text-navy text-sm hover:bg-gray-50 transition-colors">
+          Do prices surge during Ramadan or Hajj?
+          <i data-lucide="chevron-down" class="w-4 h-4 text-gold faq-chevron shrink-0 ml-3"></i>
+        </button>
+        <div class="faq-body">
+          <p class="px-5 pb-4 text-gray-500 text-sm leading-relaxed">No. Our prices are fixed year-round — no surge pricing during Ramadan, Hajj, or any other time.</p>
+        </div>
+      </div>
+
+      <div class="border border-gray-200 rounded-xl overflow-hidden">
+        <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between px-5 py-4 text-left font-semibold text-navy text-sm hover:bg-gray-50 transition-colors">
+          Is prepayment required to book?
+          <i data-lucide="chevron-down" class="w-4 h-4 text-gold faq-chevron shrink-0 ml-3"></i>
+        </button>
+        <div class="faq-body">
+          <p class="px-5 pb-4 text-gray-500 text-sm leading-relaxed">No — you pay cash to the driver on arrival. No card, no online payment, no deposit required.</p>
+        </div>
+      </div>
+
+      <div class="border border-gray-200 rounded-xl overflow-hidden">
+        <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between px-5 py-4 text-left font-semibold text-navy text-sm hover:bg-gray-50 transition-colors">
+          Do drivers speak English?
+          <i data-lucide="chevron-down" class="w-4 h-4 text-gold faq-chevron shrink-0 ml-3"></i>
+        </button>
+        <div class="faq-body">
+          <p class="px-5 pb-4 text-gray-500 text-sm leading-relaxed">Yes — all our drivers speak English and Urdu to serve international pilgrims and travelers comfortably.</p>
+        </div>
+      </div>
+
+      <div class="border border-gray-200 rounded-xl overflow-hidden">
+        <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between px-5 py-4 text-left font-semibold text-navy text-sm hover:bg-gray-50 transition-colors">
+          Can I book for a group larger than 12?
+          <i data-lucide="chevron-down" class="w-4 h-4 text-gold faq-chevron shrink-0 ml-3"></i>
+        </button>
+        <div class="faq-body">
+          <p class="px-5 pb-4 text-gray-500 text-sm leading-relaxed">Yes — WhatsApp us with your group size and we'll arrange multiple vehicles and a custom group quote.</p>
+        </div>
+      </div>
+
+      <div class="border border-gray-200 rounded-xl overflow-hidden">
+        <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between px-5 py-4 text-left font-semibold text-navy text-sm hover:bg-gray-50 transition-colors">
+          How far in advance should I book?
+          <i data-lucide="chevron-down" class="w-4 h-4 text-gold faq-chevron shrink-0 ml-3"></i>
+        </button>
+        <div class="faq-body">
+          <p class="px-5 pb-4 text-gray-500 text-sm leading-relaxed">We recommend booking at least 24 hours ahead. During Ramadan and Hajj season, book as early as possible as slots fill quickly.</p>
+        </div>
+      </div>
+
+      <div class="border border-gray-200 rounded-xl overflow-hidden">
+        <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between px-5 py-4 text-left font-semibold text-navy text-sm hover:bg-gray-50 transition-colors">
+          Are you available 24 hours a day?
+          <i data-lucide="chevron-down" class="w-4 h-4 text-gold faq-chevron shrink-0 ml-3"></i>
+        </button>
+        <div class="faq-body">
+          <p class="px-5 pb-4 text-gray-500 text-sm leading-relaxed">Yes — KhalfanRide operates 24/7, including late-night airport pickups and early Fajr transfers.</p>
+        </div>
+      </div>
 
     </div>
   </div>
