@@ -154,6 +154,16 @@
       50%      { box-shadow: 0 0 0 14px rgba(37,211,102,0); }
     }
 
+    /* ── Floating Call ── */
+    .call-float {
+      position: fixed; bottom: 88px; right: 24px; z-index: 999;
+      animation: call-pulse 2.5s infinite;
+    }
+    @keyframes call-pulse {
+      0%,100% { box-shadow: 0 0 0 0 rgba(235,168,21,0.55); }
+      50%      { box-shadow: 0 0 0 14px rgba(235,168,21,0); }
+    }
+
     /* ── Section headings ── */
     .sec-tag { color: #EBA815; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
     .sec-h2  { font-size: 1.5rem; font-weight: 800; color: #0A1D2E; line-height: 1.2; }
@@ -1336,6 +1346,17 @@
   </div>
 </footer>
 
+
+<!-- ════════════════════════════════════════
+     FLOATING CALL
+════════════════════════════════════════ -->
+<a href="tel:+966540743000"
+   class="call-float w-14 h-14 bg-gold hover:bg-gold-dark rounded-full flex items-center justify-center shadow-xl transition-colors"
+   aria-label="Call KhalfanRide">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#0A1D2E" class="w-7 h-7">
+    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+  </svg>
+</a>
 
 <!-- ════════════════════════════════════════
      FLOATING WHATSAPP
