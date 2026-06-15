@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KhalfanRide – Premium Taxi & Umrah Transfers | Jeddah, Makkah, Madinah</title>
   <meta name="description" content="Premium 24/7 private taxi and Umrah transfers across Jeddah, Makkah, and Madinah. Fixed transparent fares, professional drivers. Book on WhatsApp instantly." />
+  <!-- Google Search Console Verification -->
+  <meta name="google-site-verification" content="RfkC3m0td2Z3WESZoXQo7Lpi27TUcpyX_3ieNXKvDK8" />
+  <!-- Google Analytics GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-391PTY6HD6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-391PTY6HD6');
+  </script>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet"/>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -24,7 +34,7 @@
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
   <style>
     * { font-family: 'Inter', sans-serif; }
-    html { scroll-behavior: smooth; }
+    html, body { scroll-behavior: smooth; overflow-x: hidden; max-width: 100%; }
 
     /* ── HERO CAROUSEL ── */
     .hero-wrap {
@@ -154,41 +164,41 @@
 <!-- ════════════════════════════════════════
      HEADER
 ════════════════════════════════════════ -->
-<header class="sticky top-0 z-50 border-b border-white/10 shadow-sm" style="background-color:#0B1E33;">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-14">
+<header class="sticky top-0 z-50 shadow-lg" style="background: linear-gradient(90deg, #0A1D2E 0%, #122d46 60%, #0A1D2E 100%); border-bottom: 2px solid #EBA815;">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
 
     <!-- Logo -->
     <a href="#" class="shrink-0">
-      <img src="logo.svg" alt="KhalfanRide" class="h-16 w-auto" />
+      <img src="logo.png?v=2" alt="KhalfanRide" class="h-28 w-auto" />
     </a>
 
     <!-- Nav -->
-    <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-white/80">
-      <a href="#services" class="hover:text-navy transition-colors">Services</a>
-      <a href="#fleet"    class="hover:text-navy transition-colors">Fleet</a>
-      <a href="#pricing"  class="hover:text-navy transition-colors">Pricing</a>
-      <a href="#contact"  class="hover:text-navy transition-colors">Contact</a>
+    <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-white/90">
+      <a href="#services" class="hover:text-gold transition-colors">Services</a>
+      <a href="#fleet"    class="hover:text-gold transition-colors">Fleet</a>
+      <a href="#pricing"  class="hover:text-gold transition-colors">Pricing</a>
+      <a href="#contact"  class="hover:text-gold transition-colors">Contact</a>
     </nav>
 
     <!-- CTA + hamburger -->
     <div class="flex items-center gap-3">
-      <a href="https://wa.me/966540743000?text=Hello%20KhalfanRide!%20I%20want%20to%20book%20a%20transfer."
+      <a href="https://wa.me/966540743000?text=Hello%20KhalfanRide!%20I%20want%20to%20book%20a%20ride."
          target="_blank" rel="noopener noreferrer"
-         class="hidden sm:inline-flex items-center gap-1.5 bg-gold hover:bg-gold-dark text-navy font-bold text-xs px-4 py-2.5 rounded-lg transition-colors">
+         class="hidden sm:inline-flex items-center gap-1.5 bg-gold hover:bg-gold-dark text-navy font-bold text-xs px-4 py-2.5 rounded-lg transition-colors shadow-md">
         <i data-lucide="message-circle" class="w-3.5 h-3.5"></i> Book on WhatsApp
       </a>
       <button id="menu-btn" class="md:hidden text-white">
-        <i data-lucide="menu" class="w-5 h-5"></i>
+        <i data-lucide="menu" class="w-6 h-6"></i>
       </button>
     </div>
   </div>
   <!-- Mobile nav -->
-  <div id="mobile-menu" class="hidden md:hidden border-t border-white/10 px-4 pb-3" style="background-color:#0B1E33;">
-    <div class="flex flex-col gap-2 pt-2 text-sm font-medium text-white/80">
-      <a href="#services" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="py-1.5">Services</a>
-      <a href="#fleet"    onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="py-1.5">Fleet</a>
-      <a href="#pricing"  onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="py-1.5">Pricing</a>
-      <a href="#contact"  onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="py-1.5">Contact</a>
+  <div id="mobile-menu" class="hidden md:hidden border-t border-gold/30 px-4 pb-3" style="background: linear-gradient(90deg, #0A1D2E, #122d46);">
+    <div class="flex flex-col gap-2 pt-2 text-sm font-semibold text-white/90">
+      <a href="#services" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="py-1.5 hover:text-gold transition-colors">Services</a>
+      <a href="#fleet"    onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="py-1.5 hover:text-gold transition-colors">Fleet</a>
+      <a href="#pricing"  onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="py-1.5 hover:text-gold transition-colors">Pricing</a>
+      <a href="#contact"  onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="py-1.5 hover:text-gold transition-colors">Contact</a>
       <a href="https://wa.me/966540743000" target="_blank" rel="noopener noreferrer"
          class="bg-gold text-navy font-bold text-xs px-4 py-2.5 rounded-lg text-center mt-1">Book on WhatsApp</a>
     </div>
@@ -481,7 +491,7 @@
       <!-- Card: Toyota Camry -->
       <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl hover:scale-[1.02] transition-all duration-300">
         <div class="h-40 overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1758216383800-7023ee8ed42b?w=600&q=85"
+          <img src="images/camry.jpg"
                alt="Toyota Camry" class="w-full h-full object-cover" />
         </div>
         <div class="p-4">
@@ -553,7 +563,7 @@
       <!-- Card: GMC Yukon XL -->
       <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl hover:scale-[1.02] transition-all duration-300">
         <div class="h-40 overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1758222397238-c29ea895cbfa?w=600&q=85"
+          <img src="images/gmc-yukon.jpg"
                alt="GMC Yukon XL" class="w-full h-full object-cover" />
         </div>
         <div class="p-4">
@@ -589,7 +599,7 @@
       <!-- Card: Toyota Hiace -->
       <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl hover:scale-[1.02] transition-all duration-300">
         <div class="h-40 overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1762677943454-48a9c3240f2d?w=600&q=85"
+          <img src="images/hiace.jpg"
                alt="Toyota Hiace" class="w-full h-full object-cover" />
         </div>
         <div class="p-4">
@@ -634,7 +644,7 @@
       <!-- ── Toyota Camry ── -->
       <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden">
         <div class="flex items-center gap-3 p-4 bg-navy">
-          <img src="https://images.unsplash.com/photo-1758216383800-7023ee8ed42b?w=300&q=85"
+          <img src="images/camry.jpg"
                alt="Toyota Camry" class="w-16 h-12 object-cover rounded-lg shrink-0" />
           <div>
             <p class="text-white font-extrabold text-sm">Toyota Camry</p>
@@ -661,6 +671,10 @@
           <div class="flex items-center justify-between px-4 py-2.5">
             <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Ziyarat Tour</span>
             <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 200</span>
+          </div>
+          <div class="flex items-center justify-between px-4 py-2.5">
+            <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Taif Return</span>
+            <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 650</span>
           </div>
         </div>
         <div class="p-3">
@@ -700,6 +714,10 @@
             <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Ziyarat Tour</span>
             <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 250</span>
           </div>
+          <div class="flex items-center justify-between px-4 py-2.5">
+            <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Taif Return</span>
+            <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 800</span>
+          </div>
         </div>
         <div class="p-3">
           <a href="https://wa.me/966540743000?text=Hello%20KhalfanRide!%20I%20want%20to%20book%20Hyundai%20Staria." target="_blank" rel="noopener noreferrer"
@@ -710,7 +728,7 @@
       <!-- ── Toyota Hiace ── -->
       <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden">
         <div class="flex items-center gap-3 p-4 bg-navy">
-          <img src="https://images.unsplash.com/photo-1762677943454-48a9c3240f2d?w=300&q=85"
+          <img src="images/hiace.jpg"
                alt="Toyota Hiace" class="w-16 h-12 object-cover rounded-lg shrink-0" />
           <div>
             <p class="text-white font-extrabold text-sm">Toyota Hiace</p>
@@ -738,6 +756,10 @@
             <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Ziyarat Tour</span>
             <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 350</span>
           </div>
+          <div class="flex items-center justify-between px-4 py-2.5">
+            <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Taif Return</span>
+            <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 1,000</span>
+          </div>
         </div>
         <div class="p-3">
           <a href="https://wa.me/966540743000?text=Hello%20KhalfanRide!%20I%20want%20to%20book%20Toyota%20Hiace." target="_blank" rel="noopener noreferrer"
@@ -748,7 +770,7 @@
       <!-- ── Hyundai H1 Starex ── -->
       <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden">
         <div class="flex items-center gap-3 p-4 bg-navy">
-          <img src="https://images.unsplash.com/photo-1647702504702-6b3dc40eafe5?w=300&q=85"
+          <img src="images/h1-starex.jpg"
                alt="H1 Starex" class="w-16 h-12 object-cover rounded-lg shrink-0" />
           <div>
             <p class="text-white font-extrabold text-sm">Hyundai H1 Starex</p>
@@ -776,6 +798,10 @@
             <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Ziyarat Tour</span>
             <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 300</span>
           </div>
+          <div class="flex items-center justify-between px-4 py-2.5">
+            <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Taif Return</span>
+            <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 900</span>
+          </div>
         </div>
         <div class="p-3">
           <a href="https://wa.me/966540743000?text=Hello%20KhalfanRide!%20I%20want%20to%20book%20Hyundai%20H1%20Starex." target="_blank" rel="noopener noreferrer"
@@ -786,7 +812,7 @@
       <!-- ── GMC Yukon XL ── -->
       <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden">
         <div class="flex items-center gap-3 p-4 bg-navy">
-          <img src="https://images.unsplash.com/photo-1758222397238-c29ea895cbfa?w=300&q=85"
+          <img src="images/gmc-yukon.jpg"
                alt="GMC Yukon XL" class="w-16 h-12 object-cover rounded-lg shrink-0" />
           <div>
             <p class="text-white font-extrabold text-sm">GMC Yukon XL</p>
@@ -800,15 +826,15 @@
           </div>
           <div class="flex items-center justify-between px-4 py-2.5">
             <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Makkah → Madinah</span>
-            <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 750</span>
+            <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 900</span>
           </div>
           <div class="flex items-center justify-between px-4 py-2.5">
             <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Madinah → Makkah</span>
-            <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 750</span>
+            <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 900</span>
           </div>
           <div class="flex items-center justify-between px-4 py-2.5">
             <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Jeddah → Madinah</span>
-            <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 800</span>
+            <span class="text-gold font-black text-sm shrink-0 ml-2">SAR 950</span>
           </div>
           <div class="flex items-center justify-between px-4 py-2.5">
             <span class="flex items-center gap-1.5 text-xs text-gray-600"><i data-lucide="map-pin" class="w-3 h-3 text-gold shrink-0"></i>Ziyarat Tour</span>
@@ -832,7 +858,7 @@
       <!-- ── Toyota Coaster ── -->
       <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden">
         <div class="flex items-center gap-3 p-4 bg-navy">
-          <img src="https://images.unsplash.com/photo-1669886845445-c2350d2431f5?w=300&q=85"
+          <img src="images/coaster.jpg"
                alt="Toyota Coaster" class="w-16 h-12 object-cover rounded-lg shrink-0" />
           <div>
             <p class="text-white font-extrabold text-sm">Toyota Coaster</p>
@@ -878,7 +904,7 @@
       <!-- ── Bus 50-Seater ── -->
       <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden md:col-span-2">
         <div class="flex items-center gap-3 p-4 bg-navy">
-          <img src="https://images.unsplash.com/photo-1546347930-c3a16cd9ff0a?w=300&q=85"
+          <img src="images/bus50.jpg"
                alt="Bus 50-Seater" class="w-16 h-12 object-cover rounded-lg shrink-0" />
           <div>
             <p class="text-white font-extrabold text-sm">Bus 50-Seater</p>
@@ -975,7 +1001,7 @@
 
     </div>
 
-    <a href="https://wa.me/966540743000?text=Hello%20KhalfanRide!%20I%20want%20to%20book%20a%20transfer."
+    <a href="https://wa.me/966540743000?text=Hello%20KhalfanRide!%20I%20want%20to%20book%20a%20ride."
        target="_blank" rel="noopener noreferrer"
        class="mt-12 inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-navy font-black text-sm px-10 py-4 rounded-xl shadow-lg transition-colors">
       <i data-lucide="message-circle" class="w-4 h-4"></i> Book Now on WhatsApp
@@ -993,66 +1019,119 @@
     <h2 class="sec-h2 mb-3">TRUSTED BY 1,000+ PILGRIMS</h2>
     <p class="text-gray-500 text-sm mb-10">Real reviews from real travelers across Saudi Arabia</p>
 
-    <!-- Stats row -->
-    <div class="flex justify-center gap-10 mb-12">
-      <div class="text-center">
-        <div class="text-gold font-black text-3xl">1,000+</div>
-        <div class="text-gray-500 text-sm mt-1">Happy Pilgrims</div>
+    <!-- Stats row — mobile friendly -->
+    <div class="grid grid-cols-3 gap-3 mb-12 max-w-lg mx-auto">
+      <div class="text-center bg-white rounded-2xl px-3 py-4 shadow-sm border border-gray-100">
+        <div class="text-gold font-black text-2xl sm:text-3xl">1,000+</div>
+        <div class="text-gray-500 text-xs mt-1">Happy Pilgrims</div>
       </div>
-      <div class="w-px bg-gray-200"></div>
-      <div class="text-center">
-        <div class="text-gold font-black text-3xl">4.9★</div>
-        <div class="text-gray-500 text-sm mt-1">Average Rating</div>
+      <div class="text-center bg-white rounded-2xl px-3 py-4 shadow-sm border border-gray-100">
+        <div class="text-gold font-black text-2xl sm:text-3xl">4.9★</div>
+        <div class="text-gray-500 text-xs mt-1">Average Rating</div>
       </div>
-      <div class="w-px bg-gray-200"></div>
-      <div class="text-center">
-        <div class="text-gold font-black text-3xl">263+</div>
-        <div class="text-gray-500 text-sm mt-1">Verified Reviews</div>
+      <div class="text-center bg-white rounded-2xl px-3 py-4 shadow-sm border border-gray-100">
+        <div class="text-gold font-black text-2xl sm:text-3xl">263+</div>
+        <div class="text-gray-500 text-xs mt-1">Verified Reviews</div>
       </div>
     </div>
 
-    <!-- Review cards -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- Review cards — auto-sliding carousel -->
+    <div class="relative overflow-hidden">
+      <div id="review-track" class="flex gap-5 transition-transform duration-700 ease-in-out">
 
-      <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-left">
-        <div class="text-gold text-base mb-3">★★★★★</div>
-        <p class="text-gray-700 text-sm leading-relaxed mb-4">"Excellent service! Driver was on time, car was clean, and the price was exactly as quoted. Will definitely use again for Umrah."</p>
-        <div class="flex items-center gap-3 border-t border-gray-100 pt-4">
-          <div class="w-9 h-9 bg-navy rounded-full flex items-center justify-center text-white font-bold text-sm">A</div>
-          <div>
-            <p class="font-bold text-navy text-sm">Ahmed K.</p>
-            <p class="text-gray-400 text-xs">Pakistan</p>
+        <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-left flex-shrink-0 w-full sm:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)]">
+          <div class="text-gold text-base mb-3">★★★★★</div>
+          <p class="text-gray-700 text-sm leading-relaxed mb-4">"Excellent service! Driver was on time, car was clean, and the price was exactly as quoted. Will definitely use again for Umrah."</p>
+          <div class="flex items-center gap-3 border-t border-gray-100 pt-4">
+            <div class="w-9 h-9 bg-navy rounded-full flex items-center justify-center text-white font-bold text-sm">A</div>
+            <div><p class="font-bold text-navy text-sm">Ahmed K.</p><p class="text-gray-400 text-xs">Pakistan</p></div>
           </div>
         </div>
-      </div>
 
-      <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-left">
-        <div class="text-gold text-base mb-3">★★★★★</div>
-        <p class="text-gray-700 text-sm leading-relaxed mb-4">"Fixed price, spotless car, and the driver spoke English perfectly. Booking via WhatsApp was so easy. Highly recommended!"</p>
-        <div class="flex items-center gap-3 border-t border-gray-100 pt-4">
-          <div class="w-9 h-9 bg-navy rounded-full flex items-center justify-center text-white font-bold text-sm">F</div>
-          <div>
-            <p class="font-bold text-navy text-sm">Fatima R.</p>
-            <p class="text-gray-400 text-xs">Malaysia</p>
+        <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-left flex-shrink-0 w-full sm:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)]">
+          <div class="text-gold text-base mb-3">★★★★★</div>
+          <p class="text-gray-700 text-sm leading-relaxed mb-4">"Fixed price, spotless car, and the driver spoke English perfectly. Booking via WhatsApp was so easy. Highly recommended!"</p>
+          <div class="flex items-center gap-3 border-t border-gray-100 pt-4">
+            <div class="w-9 h-9 bg-navy rounded-full flex items-center justify-center text-white font-bold text-sm">F</div>
+            <div><p class="font-bold text-navy text-sm">Fatima R.</p><p class="text-gray-400 text-xs">Malaysia</p></div>
           </div>
         </div>
-      </div>
 
-      <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-left">
-        <div class="text-gold text-base mb-3">★★★★★</div>
-        <p class="text-gray-700 text-sm leading-relaxed mb-4">"We were a family of 8. KhalfanRide sent a spacious Staria — perfect. No surge pricing during Ramadan. JazakAllah Khair!"</p>
-        <div class="flex items-center gap-3 border-t border-gray-100 pt-4">
-          <div class="w-9 h-9 bg-navy rounded-full flex items-center justify-center text-white font-bold text-sm">M</div>
-          <div>
-            <p class="font-bold text-navy text-sm">Mohammed S.</p>
-            <p class="text-gray-400 text-xs">United Kingdom</p>
+        <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-left flex-shrink-0 w-full sm:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)]">
+          <div class="text-gold text-base mb-3">★★★★★</div>
+          <p class="text-gray-700 text-sm leading-relaxed mb-4">"We were a family of 8. KhalfanRide sent a spacious Staria — perfect. No surge pricing during Ramadan. JazakAllah Khair!"</p>
+          <div class="flex items-center gap-3 border-t border-gray-100 pt-4">
+            <div class="w-9 h-9 bg-navy rounded-full flex items-center justify-center text-white font-bold text-sm">M</div>
+            <div><p class="font-bold text-navy text-sm">Mohammed S.</p><p class="text-gray-400 text-xs">United Kingdom</p></div>
           </div>
         </div>
+
+        <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-left flex-shrink-0 w-full sm:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)]">
+          <div class="text-gold text-base mb-3">★★★★★</div>
+          <p class="text-gray-700 text-sm leading-relaxed mb-4">"The Coaster bus for our group of 20 was immaculate. Driver was professional and knew every route perfectly. Best transport in KSA!"</p>
+          <div class="flex items-center gap-3 border-t border-gray-100 pt-4">
+            <div class="w-9 h-9 bg-navy rounded-full flex items-center justify-center text-white font-bold text-sm">Y</div>
+            <div><p class="font-bold text-navy text-sm">Yusuf A.</p><p class="text-gray-400 text-xs">Indonesia</p></div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-left flex-shrink-0 w-full sm:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)]">
+          <div class="text-gold text-base mb-3">★★★★★</div>
+          <p class="text-gray-700 text-sm leading-relaxed mb-4">"Picked us up from Madinah airport at 3am without any issues. Car was luxurious and driver very respectful. 100% recommended."</p>
+          <div class="flex items-center gap-3 border-t border-gray-100 pt-4">
+            <div class="w-9 h-9 bg-navy rounded-full flex items-center justify-center text-white font-bold text-sm">S</div>
+            <div><p class="font-bold text-navy text-sm">Sara H.</p><p class="text-gray-400 text-xs">Egypt</p></div>
+          </div>
+        </div>
+
       </div>
 
+      <!-- Dots -->
+      <div class="flex justify-center gap-2 mt-8" id="review-dots"></div>
     </div>
+
   </div>
 </section>
+
+<script>
+(function(){
+  const track = document.getElementById('review-track');
+  const dotsEl = document.getElementById('review-dots');
+  if (!track) return;
+
+  const cards = track.children;
+  let current = 0;
+
+  function getVisible() {
+    if (window.innerWidth >= 1024) return 3;
+    if (window.innerWidth >= 640)  return 2;
+    return 1;
+  }
+
+  function buildDots() {
+    dotsEl.innerHTML = '';
+    const total = cards.length - getVisible() + 1;
+    for (let i = 0; i < total; i++) {
+      const d = document.createElement('button');
+      d.className = 'w-2 h-2 rounded-full transition-all duration-300 ' + (i === current ? 'bg-gold w-5' : 'bg-gray-300');
+      d.onclick = () => goTo(i);
+      dotsEl.appendChild(d);
+    }
+  }
+
+  function goTo(n) {
+    const total = cards.length - getVisible() + 1;
+    current = Math.max(0, Math.min(n, total - 1));
+    const cardW = cards[0].offsetWidth + 20;
+    track.style.transform = `translateX(-${current * cardW}px)`;
+    buildDots();
+  }
+
+  buildDots();
+  const timer = setInterval(() => goTo(current + 1 < cards.length - getVisible() + 1 ? current + 1 : 0), 3500);
+  window.addEventListener('resize', () => { buildDots(); goTo(0); });
+})();
+</script>
 
 
 <!-- ════════════════════════════════════════
@@ -1135,14 +1214,14 @@
 <!-- ════════════════════════════════════════
      DARK CTA — READY TO BOOK
 ════════════════════════════════════════ -->
-<section class="bg-navy py-16">
+<section class="py-16" style="background: linear-gradient(135deg, #061220 0%, #0f2d48 40%, #1a4a6e 60%, #061220 100%); border-top: 3px solid #EBA815;">
   <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
 
       <!-- Left: Branding -->
       <div>
         <div class="mb-4">
-          <img src="logo.svg" alt="KhalfanRide" class="h-20 w-auto" style="filter: brightness(0) invert(1) sepia(1) saturate(0) brightness(2);" />
+          <img src="logo.png?v=2" alt="KhalfanRide" class="h-28 w-auto" />
         </div>
         <div class="flex items-center gap-0.5 mb-3">
           <span class="text-gold text-lg">★★★★★</span>
@@ -1160,7 +1239,7 @@
         </h2>
         <p class="text-white/50 text-sm mb-6">WhatsApp us now — instant confirmation, pay on arrival.</p>
         <div class="flex flex-col sm:flex-row lg:flex-col xl:flex-row items-center lg:items-end gap-3 justify-center lg:justify-end">
-          <a href="https://wa.me/966540743000?text=Hello%20KhalfanRide!%20I%20want%20to%20book%20a%20transfer."
+          <a href="https://wa.me/966540743000?text=Hello%20KhalfanRide!%20I%20want%20to%20book%20a%20ride."
              target="_blank" rel="noopener noreferrer"
              class="flex items-center gap-2 bg-gold hover:bg-gold-dark text-navy font-black text-sm px-8 py-3.5 rounded-xl shadow-xl transition-colors">
             <i data-lucide="message-circle" class="w-4 h-4"></i> Book on WhatsApp
@@ -1182,20 +1261,22 @@
 <!-- ════════════════════════════════════════
      FOOTER
 ════════════════════════════════════════ -->
-<footer id="contact" class="bg-[#060f18]">
+<footer id="contact" style="background: linear-gradient(180deg, #071525 0%, #040d16 100%); border-top: 3px solid #EBA815;">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
       <div>
         <div class="mb-3">
-          <img src="logo.svg" alt="KhalfanRide" class="h-14 w-auto brightness-0 invert" />
+          <img src="logo.png?v=2" alt="KhalfanRide" class="h-24 w-auto" />
         </div>
         <p class="text-white/35 text-xs leading-relaxed max-w-xs mb-4">Premium 24/7 private transportation across Saudi Arabia's holy cities.</p>
         <div class="flex gap-2">
-          <a href="#" class="w-7 h-7 bg-white/10 hover:bg-gold hover:text-navy rounded-md flex items-center justify-center transition-colors text-white">
-            <i data-lucide="instagram" class="w-3 h-3"></i></a>
-          <a href="#" class="w-7 h-7 bg-white/10 hover:bg-gold hover:text-navy rounded-md flex items-center justify-center transition-colors text-white">
-            <i data-lucide="twitter" class="w-3 h-3"></i></a>
+          <a href="https://www.instagram.com/info.rahilride/" target="_blank" rel="noopener noreferrer" class="w-7 h-7 bg-white/10 hover:bg-gold hover:text-navy rounded-md flex items-center justify-center transition-colors text-white">
+            <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@khalfanride" target="_blank" rel="noopener noreferrer" class="w-7 h-7 bg-white/10 hover:bg-gold hover:text-navy rounded-md flex items-center justify-center transition-colors text-white">
+            <svg class="w-3 h-3" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/></svg>
+          </a>
           <a href="https://wa.me/966540743000" target="_blank" rel="noopener noreferrer"
              class="w-7 h-7 bg-white/10 hover:bg-gold hover:text-navy rounded-md flex items-center justify-center transition-colors text-white">
             <i data-lucide="message-circle" class="w-3 h-3"></i></a>
@@ -1255,7 +1336,7 @@
 <!-- ════════════════════════════════════════
      FLOATING WHATSAPP
 ════════════════════════════════════════ -->
-<a href="https://wa.me/966540743000?text=Hello%20KhalfanRide!%20I%20want%20to%20book%20a%20transfer."
+<a href="https://wa.me/966540743000?text=Hello%20KhalfanRide!%20I%20want%20to%20book%20a%20ride."
    target="_blank" rel="noopener noreferrer"
    class="wa-float w-14 h-14 bg-[#25D366] hover:bg-[#1ebe5d] rounded-full flex items-center justify-center shadow-xl transition-colors"
    aria-label="Chat on WhatsApp">
