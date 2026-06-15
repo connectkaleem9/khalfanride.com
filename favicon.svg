@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 156 160">
+
+  <!-- ICON BADGE -->
+  <rect x="1" y="1" width="153" height="158" rx="20" fill="#0A1D2E"/>
+
+  <!-- ── R LETTERFORM (white) ── -->
+  <!-- Vertical stem -->
+  <rect x="17" y="16" width="15" height="94" fill="white"/>
+  <!-- Bowl — outer white fill -->
+  <path d="M32 16 H65 C94 16 94 58 65 60 H32 Z" fill="white"/>
+  <!-- Bowl — inner navy cutout (creates the counter) -->
+  <path d="M32 27 H62 C79 27 79 50 62 51 H32 Z" fill="#0A1D2E"/>
+
+  <!-- ── R DIAGONAL LEG — GOLD = the road ── -->
+  <polygon points="32,60 70,60 104,110 76,110" fill="#EBA815"/>
+  <!-- Road centre-line dashes on the gold leg -->
+  <line x1="49" y1="68" x2="60" y2="76" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.65"/>
+  <line x1="69" y1="82" x2="80" y2="90" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.65"/>
+  <line x1="89" y1="96" x2="100" y2="104" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.65"/>
+
+  <!-- CAR — CLEAN SIDE PROFILE -->
+  <!-- Main body -->
+  <rect x="14" y="122" width="126" height="16" rx="6" fill="white"/>
+  <!-- Cabin roof -->
+  <path d="M42 122 L57 110 L98 110 L113 122 Z" fill="white"/>
+  <!-- Glass area (tinted) -->
+  <path d="M50 121 L62 112 L95 112 L107 121 Z" fill="#0A1D2E" opacity="0.2"/>
+  <!-- A-pillar divider -->
+  <rect x="75" y="111" width="4" height="11" fill="#0A1D2E" opacity="0.2"/>
+  <!-- Headlight -->
+  <rect x="14" y="126" width="13" height="5" rx="2.5" fill="#EBA815"/>
+  <!-- Tail light -->
+  <rect x="127" y="126" width="13" height="5" rx="2.5" fill="#EBA815"/>
+  <!-- Front wheel -->
+  <circle cx="43" cy="138" r="9.5" fill="#0A1D2E"/>
+  <circle cx="43" cy="138" r="5"   fill="white" opacity="0.18"/>
+  <circle cx="43" cy="138" r="2"   fill="#0A1D2E"/>
+  <!-- Rear wheel -->
+  <circle cx="111" cy="138" r="9.5" fill="#0A1D2E"/>
+  <circle cx="111" cy="138" r="5"   fill="white" opacity="0.18"/>
+  <circle cx="111" cy="138" r="2"   fill="#0A1D2E"/>
+
+</svg>
